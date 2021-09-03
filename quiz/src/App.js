@@ -6,6 +6,9 @@ import Toplist from './views/Toplist';
 import Start from './views/Start';
 
 function App() {
+
+  //Sätta till en hide true/false så man kan dölja menyn i spelet tex??
+
   return (
     <div className="App">
       <h1> QUIZ </h1>
