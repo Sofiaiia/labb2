@@ -28,6 +28,18 @@ function Game(){
 
     //loop som skriver ut en fråga i gången och väntar på ett svar
     //kanske innan en timer är slut 
+    const gameLoop = () => {
+        setCurrent(0);
+        while(currentQuestion < 10){
+            setCurrent(currentQuestion +1);
+            questions.map((fraga,index)=> {
+                return(
+                    index === currentQuestion 
+                    ? <p key={fraga.question}>{fraga.question}</p> 
+                    : "" ) 
+          })
+        }
+    }
 
     //Låter användaren välja params
 
