@@ -31,8 +31,8 @@ function Game(){
         <div>
           GAME
           {loading ? (<p>Loading...</p>)
-          :(questions.map(({question})=>(
-              <p key={question}>{question}</p>  
+          :(questions.map((fraga)=>(
+              <p key={fraga}>{fraga.question}</p>  
           )))}
           
         </div>
