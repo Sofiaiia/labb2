@@ -4,8 +4,9 @@ function Game(){
 
     //Ska dessa va i reduxstoren kanske?
     const [questions,setQuestions] = useState([]);
-    const [currentQuestion,setCurrent] =useState({});
-    const [answerdQuestions, setAnswered] = useState(0); 
+    //const [currentQuestion,setCurrent] =useState({});
+    //const [answerdQuestions, setAnswered] = useState(0); 
+    const [loading,setLoading] = useState(true);
 
     //Hämta frågor från API med async/await 
     const fetchData = async() =>{
@@ -22,23 +23,18 @@ function Game(){
     //Hämta frågorna när vyn öppnas
     useEffect(()=>{
         fetchData();
+        setLoading(false);
     },[]);
-
-    const showQusetion = () => {
-        return (
-            <>
-             
-            </>
-        );
-    }
 
     //RENDERING
     return(
         <div>
           GAME
-          {questions.map(({question})=>(
-              <p key={question}>{question.category}</p>
-          ))}
+          {loading ? (<p>Loading...</p>)
+          :(questions.map(({question})=>(
+              <p key={question}>{question}</p>  
+          )))}
+          
         </div>
     )
 }

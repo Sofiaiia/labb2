@@ -1,11 +1,7 @@
-import React, { useState } from 'react';
-import { Route, Switch , BrowserRouter,Link,Router} from 'react-router-dom';
-import Game from './Game';
+import React, {  } from 'react';
 
 function Start(){
-
-   
-
+    
     return(
         <div>
              START
