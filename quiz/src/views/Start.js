@@ -1,14 +1,16 @@
-import React from 'react';
-import { Route, Router, Switch } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Route, Switch , BrowserRouter,Link,Router} from 'react-router-dom';
 import Game from './Game';
 
 function Start(){
 
+   
+
     return(
         <div>
-            START
+             START
         </div>
-    )
+    );
 }
 
 export default Start;

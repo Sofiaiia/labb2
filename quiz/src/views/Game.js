@@ -14,7 +14,7 @@ function Game(){
              console.log(json);
              setQuestions(json);
         }catch(error){
-            console.log("eroor",error);
+            console.log("error",error);
         }
        
     }
