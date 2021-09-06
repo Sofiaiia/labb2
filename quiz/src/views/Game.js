@@ -4,8 +4,7 @@ function Game(){
 
     //Ska dessa va i reduxstoren kanske?
     const [questions,setQuestions] = useState([]);
-    const [currentQuestion,setCurrent] =useState(2);
-    //const [answerdQuestions, setAnswered] = useState(0); 
+    const [currentQuestion,setCurrent] =useState(0); 
     const [loading,setLoading] = useState(true);
 
     //Hämta frågor från API med async/await 
@@ -26,22 +25,32 @@ function Game(){
         setLoading(false);
     },[]);
 
+    //Rätta frågan när man trckt på en knapp
+    const checkAnswer = () =>{
+        setCurrent(currentQuestion +1);
+    }
     //loop som skriver ut en fråga i gången och väntar på ett svar
     //kanske innan en timer är slut 
     const gameLoop = () => {
         setCurrent(0);
         while(currentQuestion < 10){
-            setCurrent(currentQuestion +1);
             questions.map((fraga,index)=> {
                 return(
                     index === currentQuestion 
-                    ? <p key={fraga.question}>{fraga.question}</p> 
+                    ? <div key={fraga.question}> 
+                        <p>{fraga.category}</p>
+                        <p>{fraga.question}</p> 
+
+                      </div> 
                     : "" ) 
           })
+          
         }
     }
 
     //Låter användaren välja params
+
+    //Räkna ihop gamet och visa resultat för användaren- sätt in i topplista
 
     //RENDERING
     return(
