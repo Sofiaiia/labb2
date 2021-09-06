@@ -1,11 +1,12 @@
 import React from 'react';
+import { Route, Router, Switch } from 'react-router-dom';
+import Game from './Game';
 
 function Start(){
 
-    //Behövs denna???
     return(
         <div>
-            Start 
+            START
         </div>
     )
 }

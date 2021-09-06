@@ -4,10 +4,13 @@ import Game from './views/Game';
 import Rules from './views/Rules';
 import Toplist from './views/Toplist';
 import Start from './views/Start';
+import { useState } from 'react';
 
 function App() {
 
   //Sätta till en hide true/false så man kan dölja menyn i spelet tex??
+  const [hide, setHide] = useState(false);
+  //Kanske hellre knappar och setView på nått sätt som byter vyer??
 
   return (
     <div className="App">
