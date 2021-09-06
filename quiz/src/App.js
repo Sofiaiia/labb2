@@ -7,8 +7,8 @@ import Start from './views/Start';
 
 function App() {
 
-  //Sätta till en hide true/false så man kan dölja menyn i spelet tex??
-  //Kanske hellre knappar och setView på nått sätt som byter vyer??
+  //HUR dölja menyn när spelet startar?!?!?
+  //Skulle vilja ha olika styling på startsidan och resten, går det??
 
   return (
     <div className="App">
