@@ -4,7 +4,7 @@ function Game(){
 
     //Ska dessa va i reduxstoren kanske?
     const [questions,setQuestions] = useState([]);
-    //const [currentQuestion,setCurrent] =useState({});
+    const [currentQuestion,setCurrent] =useState(2);
     //const [answerdQuestions, setAnswered] = useState(0); 
     const [loading,setLoading] = useState(true);
 
@@ -26,15 +26,21 @@ function Game(){
         setLoading(false);
     },[]);
 
+    //loop som skriver ut en fråga i gången och väntar på ett svar
+    //kanske innan en timer är slut 
+
+    //Låter användaren välja params
+
     //RENDERING
     return(
         <div>
           GAME
           {loading ? (<p>Loading...</p>)
-          :(questions.map((fraga)=>(
-              <p key={fraga}>{fraga.question}</p>  
-          )))}
-          
+          :(questions.map((fraga,index)=> {
+              return(
+                  index === currentQuestion ?
+              <p key={fraga.question}>{fraga.question}</p> : "" ) 
+        }))}
         </div>
     )
 }
