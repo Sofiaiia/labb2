@@ -47,7 +47,7 @@ function Game(){
               return(
                   index === currentQuestion ?
                   <div key={fraga.question}> 
-                    <div >
+                    <div>
                         <p> Category: </p>
                         <p>{fraga.category}</p>
                     </div>
