@@ -33,24 +33,24 @@ function Game(){
     //kanske innan en timer är slut 
     const gameLoop = () => {
         setCurrent(0);
-        while(currentQuestion < 10){
+        for(var i = 0; currentQuestion < 10;){
             questions.map((fraga,index)=> {
                 return(
                     index === currentQuestion 
                     ? <div key={fraga.question}> 
                         <p>{fraga.category}</p>
                         <p>{fraga.question}</p> 
-
+                        <button>{fraga.correct_answer}</button>
                       </div> 
                     : "" ) 
           })
-          
         }
     }
 
     //Låter användaren välja params
 
     //Räkna ihop gamet och visa resultat för användaren- sätt in i topplista
+    const endGame = () => {}
 
     //RENDERING
     return(
@@ -60,7 +60,11 @@ function Game(){
           :(questions.map((fraga,index)=> {
               return(
                   index === currentQuestion ?
-              <p key={fraga.question}>{fraga.question}</p> : "" ) 
+                  <div key={fraga.question}> 
+                  <p>{fraga.category}</p>
+                  <p>{fraga.question}</p> 
+                  <button>{fraga.correct_answer}</button>
+                </div>  : "" ) 
         }))}
         </div>
     )
