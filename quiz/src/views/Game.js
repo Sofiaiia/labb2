@@ -29,11 +29,13 @@ function Game(){
     const checkAnswer = () =>{
         setCurrent(currentQuestion +1);
         //kolla med id eller nått om d e rätt svar
+        //visa en alert till en början om d e rätt/fel 
     }
 
     //Låter användaren välja params
 
     //Räkna ihop gamet och visa resultat för användaren- sätt in i topplista
+    //kunna ange sitt namn vid denna 
     const endGame = () => {}
 
     //RENDERING
@@ -47,10 +49,13 @@ function Game(){
                   <div key={fraga.question}> 
                     <p>{fraga.category}</p>
                     <p>{fraga.question}</p> 
-                    <button onClick={checkAnswer}>{fraga.correct_answer}</button>
+                    <button onClick={checkAnswer} className="answerButton">{fraga.correct_answer}</button>
                     {fraga.incorrect_answers.map((answer)=>{
                         return(
-                        <button key={answer} onClick={checkAnswer}>{answer}</button>
+                            <div key={answer}>
+                                <button  onClick={checkAnswer} className="answerButton">{answer}</button>
+                                <br/>
+                            </div>
                         )
                     })}
                   </div>  : "" ) 
