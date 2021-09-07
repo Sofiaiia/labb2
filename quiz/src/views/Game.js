@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import '../styling/game.css'
 function Game(){
 
     //Ska dessa va i reduxstoren kanske?
@@ -28,23 +28,7 @@ function Game(){
     //Rätta frågan när man trckt på en knapp
     const checkAnswer = () =>{
         setCurrent(currentQuestion +1);
-    }
-    //loop som skriver ut en fråga i gången och väntar på ett svar
-    //kanske innan en timer är slut 
-    const gameLoop = () => {
-        setCurrent(0);
-        for(var i = 0; currentQuestion < 10;){
-            questions.map((fraga,index)=> {
-                return(
-                    index === currentQuestion 
-                    ? <div key={fraga.question}> 
-                        <p>{fraga.category}</p>
-                        <p>{fraga.question}</p> 
-                        <button>{fraga.correct_answer}</button>
-                      </div> 
-                    : "" ) 
-          })
-        }
+        //kolla med id eller nått om d e rätt svar
     }
 
     //Låter användaren välja params
@@ -55,7 +39,7 @@ function Game(){
     //RENDERING
     return(
         <div>
-          GAME
+          <h2>Question {currentQuestion + 1}</h2>
           {loading ? (<p>Loading...</p>)
           :(questions.map((fraga,index)=> {
               return(
@@ -66,7 +50,7 @@ function Game(){
                     <button onClick={checkAnswer}>{fraga.correct_answer}</button>
                     {fraga.incorrect_answers.map((answer)=>{
                         return(
-                        <button key={answer}>{answer}</button>
+                        <button key={answer} onClick={checkAnswer}>{answer}</button>
                         )
                     })}
                   </div>  : "" ) 
