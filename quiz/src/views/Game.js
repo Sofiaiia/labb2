@@ -41,14 +41,17 @@ function Game(){
     //RENDERING
     return(
         <div>
-          <h2>Question {currentQuestion + 1}</h2>
+          <h2 className="questionHeading">Question {currentQuestion + 1}</h2>
           {loading ? (<p>Loading...</p>)
           :(questions.map((fraga,index)=> {
               return(
                   index === currentQuestion ?
                   <div key={fraga.question}> 
-                    <p>{fraga.category}</p>
-                    <p>{fraga.question}</p> 
+                    <div >
+                        <p> Category: </p>
+                        <p>{fraga.category}</p>
+                    </div>
+                    <p className="questionBox">{fraga.question}</p> 
                     <button onClick={checkAnswer} className="answerButton">{fraga.correct_answer}</button>
                     {fraga.incorrect_answers.map((answer)=>{
                         return(

@@ -4,7 +4,7 @@ p,h2{
 .answerButton{
     color: white;
     background-color: #E62EA6;
-    font-size: 25px;
+    font-size: 20px;
     margin-bottom: 20px;
     padding: 10px 80px 10px 80px;
     border-radius: 5px;
@@ -13,4 +13,14 @@ p,h2{
 .answerButton:hover{
     background-color: #E6D800;
     color: black;
+}
+.questionBox{
+    background-color: #01630E;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 20px 20px 20px 20px;
+    font-size: 25px;
+}
+.questionHeading{
+    font-size: 45px;
 }
