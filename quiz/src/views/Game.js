@@ -61,10 +61,15 @@ function Game(){
               return(
                   index === currentQuestion ?
                   <div key={fraga.question}> 
-                  <p>{fraga.category}</p>
-                  <p>{fraga.question}</p> 
-                  <button>{fraga.correct_answer}</button>
-                </div>  : "" ) 
+                    <p>{fraga.category}</p>
+                    <p>{fraga.question}</p> 
+                    <button onClick={checkAnswer}>{fraga.correct_answer}</button>
+                    {fraga.incorrect_answers.map((answer)=>{
+                        return(
+                        <button key={answer}>{answer}</button>
+                        )
+                    })}
+                  </div>  : "" ) 
         }))}
         </div>
     )
