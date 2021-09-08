@@ -1,23 +1,13 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import '../styling/game.css'
+import {useSelector, useDispatch} from 'react-redux';
+
 function Game(){
 
     const [questions,setQuestions] = useState([]);
     const [currentQuestion,setCurrent] =useState(0); 
     const [loading,setLoading] = useState(true);
-
-    //Hämta frågor från API med async/await 
-    const fetchData = async() =>{
-        try{
-             const response = await fetch('https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple');
-             const json = await response.json();
-             console.log(json.results);
-             setQuestions(json.results);
-        }catch(error){
-            console.log("error",error);
-        }
-    }
 
     //Hämta frågorna när vyn öppnas med axios
     useEffect(()=>{
