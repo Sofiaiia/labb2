@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import '../styling/game.css'
 function Game(){
 
-    //Ska dessa va i reduxstoren kanske?
     const [questions,setQuestions] = useState([]);
     const [currentQuestion,setCurrent] =useState(0); 
     const [loading,setLoading] = useState(true);
