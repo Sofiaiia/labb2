@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import '../styling/game.css'
 function Game(){
@@ -18,9 +19,13 @@ function Game(){
         }
     }
 
-    //Hämta frågorna när vyn öppnas
+    //Hämta frågorna när vyn öppnas med axios
     useEffect(()=>{
-        fetchData();
+        axios.get("https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple")
+             .then((response)=>{
+                 setQuestions(response.data.results);
+                 console.log(response.data.results);
+                });
         setLoading(false);
     },[]);
 
