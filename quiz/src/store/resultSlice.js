@@ -13,9 +13,13 @@ export const resultSlice = createSlice({
     initialState,
     reducers:{
         //öka poäng 
+        incrementPoint: () => {},
         //sätta antal frågor
+        numOfQuestions: () => {},
         //sätta namnet 
+        setName: () => {},
         //sätta timern 
+        setTime: () => {},
     },
 });
 
