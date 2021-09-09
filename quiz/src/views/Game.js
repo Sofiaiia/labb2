@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import '../styling/game.css'
 import {useSelector, useDispatch} from 'react-redux';
-import { selectPoints } from '../store/resultSlice';
+import { selectPoints,incrementPoint,numOfQuestions,setName,setTime, } from '../store/resultSlice';
 
 function Game(){
 
@@ -13,6 +13,7 @@ function Game(){
     const dispatch = useDispatch();
     //hämta ut variabler från 
     const totalPoints = useSelector(selectPoints);
+    //actions consts för att kunna ändra i slicern
 
     //Hämta frågorna när vyn öppnas med axios
     useEffect(()=>{

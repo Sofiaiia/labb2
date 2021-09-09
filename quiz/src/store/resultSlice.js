@@ -13,18 +13,26 @@ export const resultSlice = createSlice({
     initialState,
     reducers:{
         //öka poäng 
-        incrementPoint: () => {},
+        incrementPoint: (state) => {
+            state.points += 1;
+        },
         //sätta antal frågor
-        numOfQuestions: () => {},
+        numOfQuestions: (state,action) => {
+            state.questions = action.payload;
+        },
         //sätta namnet 
-        setName: () => {},
+        setName: (state,action) => {
+            state.name = action.payload;
+        },
         //sätta timern 
-        setTime: () => {},
+        setTime: (state,action) => {
+            state.time = action.payload;
+        },
     },
 });
 
 //här sätts namnet på reducerna in, som defineras ovan 
-export const {} = resultSlice.actions;
+export const {incrementPoint,numOfQuestions,setName,setTime} = resultSlice.actions;
 
 //selectors för alla delar av statet
 export const selectName = (state) => state.results.name;
