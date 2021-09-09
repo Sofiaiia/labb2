@@ -1,13 +1,18 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import '../styling/game.css'
-import {useSelector, useDispatch} from 'redux';
+import {useSelector, useDispatch} from 'react-redux';
+import { selectPoints } from '../store/resultSlice';
 
 function Game(){
 
     const [questions,setQuestions] = useState([]);
     const [currentQuestion,setCurrent] =useState(0); 
     const [loading,setLoading] = useState(true);
+
+    const dispatch = useDispatch();
+    //hämta ut variabler från 
+    const totalPoints = useSelector(selectPoints);
 
     //Hämta frågorna när vyn öppnas med axios
     useEffect(()=>{
