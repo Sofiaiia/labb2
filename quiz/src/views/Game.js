@@ -32,13 +32,16 @@ function Game(){
         console.log(correct);
         //kolla med id eller nått om d e rätt svar
         if(answer === correct){
-            //uppdatera resultat m dispatch
+            //nått fel i uppdateringen...den e efet lite...
+            dispatch(incrementPoint());
+            
             //visa alert, de e rätt 
         }
         else{
             //alert, det är fel
         }
         //visa en alert till en början om d e rätt/fel 
+        console.log(totalPoints);
     }
 
     //Låter användaren välja params
