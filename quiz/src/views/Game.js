@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import '../styling/game.css'
 import {useSelector, useDispatch} from 'react-redux';
-import { selectPoints,incrementPoint,numOfQuestions,setName,setTime, } from '../store/resultSlice';
+import { selectPoints,incrementPoint,numOfQuestions,setName,setTime,} from '../store/resultSlice';
 
 function Game(){
 
@@ -32,9 +32,8 @@ function Game(){
         console.log(correct);
         //kolla med id eller nått om d e rätt svar
         if(answer === correct){
-            //nått fel i uppdateringen...den e efet lite...
+            //nått fel i uppdateringen...den e efter lite...
             dispatch(incrementPoint());
-            
             //visa alert, de e rätt 
         }
         else{
@@ -54,6 +53,7 @@ function Game(){
     return(
         <div>
           <h2 className="questionHeading">Question {currentQuestion + 1}</h2>
+          <p>Points: {totalPoints}</p>
           {loading ? (<p>Loading...</p>)
           :(questions.map((fraga,index)=> {
               return(
