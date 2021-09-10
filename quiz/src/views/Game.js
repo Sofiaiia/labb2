@@ -23,12 +23,21 @@ function Game(){
                  console.log(response.data.results);
                 });
         setLoading(false);
+        setCurrent(0);
     },[]);
 
     //Rätta frågan när man trckt på en knapp
-    const checkAnswer = () =>{
+    const checkAnswer = (answer,correct) =>{
         setCurrent(currentQuestion +1);
+        console.log(correct);
         //kolla med id eller nått om d e rätt svar
+        if(answer === correct){
+            //uppdatera resultat m dispatch
+            //visa alert, de e rätt 
+        }
+        else{
+            //alert, det är fel
+        }
         //visa en alert till en början om d e rätt/fel 
     }
 
@@ -52,11 +61,11 @@ function Game(){
                         <p>{fraga.category}</p>
                     </div>
                     <p className="questionBox">{fraga.question}</p> 
-                    <button onClick={checkAnswer} className="answerButton">{fraga.correct_answer}</button>
+                    <button key={fraga.correct_answer} onClick={() =>checkAnswer(fraga.correct_answer,fraga.correct_answer)} className="answerButton">{fraga.correct_answer}</button>
                     {fraga.incorrect_answers.map((answer)=>{
                         return(
                             <div key={answer}>
-                                <button  onClick={checkAnswer} className="answerButton">{answer}</button>
+                                <button key={answer} onClick={() => checkAnswer(answer,fraga.correct_answer)} className="answerButton">{answer}</button>
                                 <br/>
                             </div>
                         )
