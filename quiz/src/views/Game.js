@@ -3,12 +3,12 @@ import React, { useEffect, useState } from 'react';
 import '../styling/game.css';
 import {useSelector, useDispatch} from 'react-redux';
 import { selectPoints,incrementPoint,numOfQuestions,setName,setTime,} from '../store/resultSlice';
-import questions from '../Components/questions';
+import questionsComp from '../Components/questionsComp';
 
 function Game(){
 
     const [questions,setQuestions] = useState([]);
-    const [currentQuestion,setCurrent] =useState(0); 
+    
     const [loading,setLoading] = useState(true);
 
     const dispatch = useDispatch();
@@ -24,22 +24,9 @@ function Game(){
                  console.log(response.data.results);
                 });
         setLoading(false);
-        setCurrent(0);
     },[]);
 
-    //Rätta frågan när man trckt på en knapp
-    const checkAnswer = (answer,correct) =>{
-        setCurrent(currentQuestion +1);
-        console.log(correct);
-        //kolla med id eller nått om d e rätt svar
-        if(answer === correct){
-            dispatch(incrementPoint());
-            //visa alert, de e rätt 
-        }
-        else{
-            //alert, det är fel
-        } 
-    }
+    
 
     //Låter användaren välja params
 
@@ -50,11 +37,9 @@ function Game(){
     //RENDERING
     return(
         <div>
-          <h2 className="questionHeading">Question {currentQuestion + 1}</h2>
-          <p>Points: {totalPoints}</p>
           {loading ? (<p>Loading...</p>)
           :(
-              <questions questions={questions}> </questions>
+              <questionsComp questions={questions}> </questionsComp>
           )}
         </div>
     )
