@@ -6,6 +6,7 @@ import { selectPoints,incrementPoint,numOfQuestions,setName,setTime,} from '../s
 function QuestionsComp(props){
 
     const [currentQuestion,setCurrent] = useState(0);  
+    const [params, setParams] = useState({number: 10, difficulty:"easy"});
     const dispatch = useDispatch();
 
     //Rätta frågan när man trckt på en knapp
