@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import '../styling/game.css';
 import {useSelector, useDispatch} from 'react-redux';
 import { selectPoints,incrementPoint,numOfQuestions,setName,setTime,} from '../store/resultSlice';
+import Alert from 'react-bootstrap/Alert';
 
 function QuestionsComp(props){
 
     const [currentQuestion,setCurrent] = useState(0);  
     const [params, setParams] = useState({number: 10, difficulty:"easy"});
+    const [show, setShow] = useState(false);
+    
     const dispatch = useDispatch();
 
     //Rätta frågan när man trckt på en knapp
@@ -17,9 +20,18 @@ function QuestionsComp(props){
         if(answer === correct){
             dispatch(incrementPoint());
             //visa alert, de e rätt 
+            setShow(true);
+            <Alert variant="success" show={show}>
+                <Alert.Heading> RIGHT ANSWER </Alert.Heading>
+                <p> </p>
+            </Alert>
         }
         else{
             //alert, det är fel
+            <Alert variant="danger">
+                <Alert.Heading> WRONG ANSWER </Alert.Heading>
+                <p> </p>
+            </Alert>
         } 
     }
     return(

@@ -4,6 +4,7 @@ import '../styling/game.css';
 import {useSelector, useDispatch} from 'react-redux';
 import { selectPoints,incrementPoint,numOfQuestions,setName,setTime,} from '../store/resultSlice';
 import QuestionsComp from '../Components/QuestionsComp';
+//import ChooseParams from '../Components/chooseParams';
 
 function Game(){
 
