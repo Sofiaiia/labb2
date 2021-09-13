@@ -53,26 +53,9 @@ function Game(){
           <h2 className="questionHeading">Question {currentQuestion + 1}</h2>
           <p>Points: {totalPoints}</p>
           {loading ? (<p>Loading...</p>)
-          :(questions.map((fraga,index)=> {
-              return(
-                  index === currentQuestion ?
-                  <div key={fraga.question}> 
-                    <div>
-                        <p> Category: </p>
-                        <p>{fraga.category}</p>
-                    </div>
-                    <p className="questionBox">{fraga.question}</p> 
-                    <button key={fraga.correct_answer} onClick={() =>checkAnswer(fraga.correct_answer,fraga.correct_answer)} className="answerButton">{fraga.correct_answer}</button>
-                    {fraga.incorrect_answers.map((answer)=>{
-                        return(
-                            <div key={answer}>
-                                <button key={answer} onClick={() => checkAnswer(answer,fraga.correct_answer)} className="answerButton">{answer}</button>
-                                <br/>
-                            </div>
-                        )
-                    })}
-                  </div>  : "" ) 
-        }))}
+          :(
+              <questions questions={questions}> </questions>
+          )}
         </div>
     )
 }

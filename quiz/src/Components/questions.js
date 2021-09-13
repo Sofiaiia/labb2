@@ -5,7 +5,7 @@ function questions(props){
 
     return(
         <div>
-            {questions.map((fraga,index)=> {
+            {props.questions.map((fraga,index)=> {
               return(
                   index === currentQuestion ?
                   <div key={fraga.question}> 
@@ -24,7 +24,7 @@ function questions(props){
                         )
                     })}
                   </div>  : "" ) 
-        }}
+        })}
         </div>
     )
 }
