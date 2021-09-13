@@ -1,8 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import '../styling/game.css'
+import '../styling/game.css';
 import {useSelector, useDispatch} from 'react-redux';
 import { selectPoints,incrementPoint,numOfQuestions,setName,setTime,} from '../store/resultSlice';
+import questions from '../Components/questions';
 
 function Game(){
 
