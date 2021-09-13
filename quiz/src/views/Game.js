@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import '../styling/game.css';
 import {useSelector, useDispatch} from 'react-redux';
 import { selectPoints,incrementPoint,numOfQuestions,setName,setTime,} from '../store/resultSlice';
-import questionsComp from '../Components/questionsComp';
+import QuestionsComp from '../Components/QuestionsComp';
 
 function Game(){
 
@@ -39,7 +39,7 @@ function Game(){
         <div>
           {loading ? (<p>Loading...</p>)
           :(
-              <questionsComp questions={questions}> </questionsComp>
+              <QuestionsComp questions={questions}> </QuestionsComp>
           )}
         </div>
     )
