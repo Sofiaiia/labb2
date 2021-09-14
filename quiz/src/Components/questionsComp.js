@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import '../styling/game.css';
 import {useSelector, useDispatch} from 'react-redux';
 import { selectPoints,incrementPoint,numOfQuestions,setName,setTime,} from '../store/resultSlice';
-import Alert from 'react-bootstrap/Alert';
-//import 'bootstrap/dist/css/bootstrap.min.css';
+//import Alert from 'react-bootstrap/Alert';
+import { Alert, AlertTitle } from '@material-ui/lab';
+import { Collapse } from '@material-ui/core';
 
 function QuestionsComp(props){
 
@@ -32,17 +33,16 @@ function QuestionsComp(props){
     }
     return(
         <div>
-            <Alert className="alertRight" show={show1} >
-                <Alert.Heading> RIGHT ANSWER </Alert.Heading>
-                <p> Right </p>
-                <button onClick={()=>setShow(false)}> Next question </button>
-            </Alert>
-
-            <Alert className="alertWrong" show={show2}>
-                <Alert.Heading> WRONG ANSWER </Alert.Heading>
-                <p> </p>
-                <button onClick={()=>setShow2(false)}> Next question </button>
-            </Alert>
+            <Collapse in={show1}> 
+                <Alert  severity="success" variant="filled" onClose={()=>setShow(false)}>
+                    RIGHT ANSWER 
+                </Alert>
+            </Collapse>
+            <Collapse in={show2}>
+                <Alert severity="error" variant="filled" onClose={()=>setShow2(false)}>
+                     WRONG ANSWER 
+                </Alert>
+            </Collapse>
 
             {props.questions.map((fraga,index)=> {
               return(
