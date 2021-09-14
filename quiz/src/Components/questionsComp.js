@@ -5,6 +5,8 @@ import { selectPoints,incrementPoint,numOfQuestions,setName,setTime,} from '../s
 //import Alert from 'react-bootstrap/Alert';
 import { Alert, AlertTitle } from '@material-ui/lab';
 import { Collapse } from '@material-ui/core';
+import CheckIcon from '@material-ui/icons/Check';
+import ClearIcon from '@material-ui/icons/Clear';
 
 function QuestionsComp(props){
 
@@ -34,13 +36,13 @@ function QuestionsComp(props){
     return(
         <div>
             <Collapse in={show1}> 
-                <Alert  severity="success" variant="filled" onClose={()=>setShow(false)}>
-                    RIGHT ANSWER 
+                <Alert icon={<CheckIcon fontSize="inherit"/>} severity="success" variant="filled" onClose={()=>setShow(false)}>
+                     <strong> RIGHT ANSWER </strong>
                 </Alert>
             </Collapse>
             <Collapse in={show2}>
-                <Alert severity="error" variant="filled" onClose={()=>setShow2(false)}>
-                     WRONG ANSWER 
+                <Alert icon={<ClearIcon fontSize="inherit"/>} severity="error" variant="filled" onClose={()=>setShow2(false)}>
+                     <strong> WRONG ANSWER  </strong>
                 </Alert>
             </Collapse>
 
