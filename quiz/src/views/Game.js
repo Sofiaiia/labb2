@@ -37,7 +37,6 @@ function Game(){
     const endGame = () => {}
 
     //RENDERING
-    //questionscomp ska visas så länge det finns frågor kvar, hur göra det???
     return(
         <div>
           {currentQuestion < 10 ? ( <QuestionsComp questions={questions} currentQuestion={currentQuestion} setCurrent={setCurrent}> </QuestionsComp>)
