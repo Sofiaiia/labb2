@@ -38,6 +38,8 @@ function ChooseParams(props){
                     <option value="medium">Medium</option>
                     <option value="hard">Hard</option>
                 </select>
+                <label> Your name: </label>
+                <input type="text"> </input>
                 <input type="submit"> START </input>
             </form>
         </div>

@@ -44,6 +44,7 @@ function QuestionsComp(props){
                   index === props.currentQuestion ?
                   <div key={fraga.question}> 
                     <h2 className="questionHeading"> Question: {props.currentQuestion +1 } </h2>
+                    <p> Points: {totalPoints}</p>
                     <div>
                         <p> Category: </p>
                         <p>{fraga.category}</p>
