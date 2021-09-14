@@ -27,3 +27,15 @@ p,h2{
 .questionHeading{
     font-size: 50px;
 }
+.alertRight{
+    background-color: greenyellow;
+    width: 50%;
+    margin-left: 25%;
+    padding: 20px 0px 20px 0px;
+}
+.alertWrong{
+    background-color: red;
+    width: 50%;
+    margin-left: 25%;
+    padding: 20px 0px 20px 0px;
+}

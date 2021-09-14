@@ -1,6 +1,8 @@
-import React from "react";
+import React,{useState} from "react";
 
 function ChooseParams(props){
+
+    const [params, setParams] = useState({number: 10, difficulty:"easy"});
 
     const changeNumber = () => {
         //set state via props 

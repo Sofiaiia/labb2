@@ -3,14 +3,16 @@ import '../styling/game.css';
 import {useSelector, useDispatch} from 'react-redux';
 import { selectPoints,incrementPoint,numOfQuestions,setName,setTime,} from '../store/resultSlice';
 import Alert from 'react-bootstrap/Alert';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 
 function QuestionsComp(props){
 
     const [currentQuestion,setCurrent] = useState(0);  
-    const [params, setParams] = useState({number: 10, difficulty:"easy"});
-    const [show, setShow] = useState(false);
+    const [show1, setShow] = useState(false);
+    const [show2, setShow2] = useState(false);
     
     const dispatch = useDispatch();
+    const totalPoints = useSelector(selectPoints);
 
     //Rätta frågan när man trckt på en knapp
     const checkAnswer = (answer,correct) =>{
@@ -18,24 +20,30 @@ function QuestionsComp(props){
         console.log(correct);
         //kolla med id eller nått om d e rätt svar
         if(answer === correct){
-            dispatch(incrementPoint());
             //visa alert, de e rätt 
             setShow(true);
-            <Alert variant="success" show={show}>
-                <Alert.Heading> RIGHT ANSWER </Alert.Heading>
-                <p> </p>
-            </Alert>
+            dispatch(incrementPoint());
+            console.log(totalPoints);
         }
         else{
             //alert, det är fel
-            <Alert variant="danger">
-                <Alert.Heading> WRONG ANSWER </Alert.Heading>
-                <p> </p>
-            </Alert>
+            setShow2(true);
         } 
     }
     return(
         <div>
+            <Alert className="alertRight" show={show1} >
+                <Alert.Heading> RIGHT ANSWER </Alert.Heading>
+                <p> Right </p>
+                <button onClick={()=>setShow(false)}> Next question </button>
+            </Alert>
+
+            <Alert className="alertWrong" show={show2}>
+                <Alert.Heading> WRONG ANSWER </Alert.Heading>
+                <p> </p>
+                <button onClick={()=>setShow2(false)}> Next question </button>
+            </Alert>
+
             {props.questions.map((fraga,index)=> {
               return(
                   index === currentQuestion ?
@@ -54,7 +62,9 @@ function QuestionsComp(props){
                             </div>
                         )
                     })}
-                  </div>  : "" ) 
+                  </div>  : "" 
+                  
+                  ) 
         })}
         </div>
     )
