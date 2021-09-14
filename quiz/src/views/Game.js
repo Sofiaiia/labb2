@@ -8,8 +8,8 @@ import QuestionsComp from '../Components/QuestionsComp';
 
 function Game(){
 
+    const [currentQuestion,setCurrent] = useState(0);  
     const [questions,setQuestions] = useState([]);
-    
     const [loading,setLoading] = useState(true);
 
     const dispatch = useDispatch();
@@ -33,15 +33,15 @@ function Game(){
 
     //Räkna ihop gamet och visa resultat för användaren- sätt in i topplista
     //kunna ange sitt namn vid denna 
+
     const endGame = () => {}
 
     //RENDERING
+    //questionscomp ska visas så länge det finns frågor kvar, hur göra det???
     return(
         <div>
-          {loading ? (<p>Loading...</p>)
-          :(
-              <QuestionsComp questions={questions}> </QuestionsComp>
-          )}
+          {currentQuestion < 10 ? ( <QuestionsComp questions={questions} currentQuestion={currentQuestion} setCurrent={setCurrent}> </QuestionsComp>)
+          :( "" )}
         </div>
     )
 }

@@ -2,37 +2,30 @@ import React, { useState } from 'react';
 import '../styling/game.css';
 import {useSelector, useDispatch} from 'react-redux';
 import { selectPoints,incrementPoint,numOfQuestions,setName,setTime,} from '../store/resultSlice';
-//import Alert from 'react-bootstrap/Alert';
-import { Alert, AlertTitle } from '@material-ui/lab';
+import { Alert } from '@material-ui/lab';
 import { Collapse } from '@material-ui/core';
 import CheckIcon from '@material-ui/icons/Check';
 import ClearIcon from '@material-ui/icons/Clear';
 
 function QuestionsComp(props){
-
-    const [currentQuestion,setCurrent] = useState(0);  
+  
     const [show1, setShow] = useState(false);
     const [show2, setShow2] = useState(false);
     
     const dispatch = useDispatch();
     const totalPoints = useSelector(selectPoints);
 
-    //Rätta frågan när man trckt på en knapp
     const checkAnswer = (answer,correct) =>{
-        setCurrent(currentQuestion +1);
-        console.log(correct);
-        //kolla med id eller nått om d e rätt svar
+        props.setCurrent(props.currentQuestion +1);
         if(answer === correct){
-            //visa alert, de e rätt 
             setShow(true);
             dispatch(incrementPoint());
-            console.log(totalPoints);
         }
         else{
-            //alert, det är fel
             setShow2(true);
         } 
     }
+    //Vill jag ha en alert eller nått annat e frågan...
     return(
         <div>
             <Collapse in={show1}> 
@@ -48,8 +41,9 @@ function QuestionsComp(props){
 
             {props.questions.map((fraga,index)=> {
               return(
-                  index === currentQuestion ?
+                  index === props.currentQuestion ?
                   <div key={fraga.question}> 
+                    <h2 className="questionHeading"> Question: {props.currentQuestion +1 } </h2>
                     <div>
                         <p> Category: </p>
                         <p>{fraga.category}</p>
