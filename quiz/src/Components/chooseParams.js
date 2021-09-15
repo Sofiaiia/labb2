@@ -3,6 +3,7 @@ import React,{useState} from "react";
 function ChooseParams(props){
 
     const [params, setParams] = useState({number: 10, difficulty:"easy"});
+    //actions för att ända antal frågor coh namn 
 
     const changeNumber = () => {
         //set state via props 
