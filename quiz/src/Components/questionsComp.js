@@ -25,7 +25,7 @@ function QuestionsComp(props){
             setShow2(true);
         } 
     }
-    //Vill jag ha en alert eller nått annat e frågan...
+    
     return(
         <div>
             <Collapse in={show1}> 

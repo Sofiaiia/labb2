@@ -1,9 +1,20 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
+import axios from "axios";
 
 function ChooseParams(props){
 
-    const [params, setParams] = useState({number: 10, difficulty:"easy"});
+    const [categories, setCategories] = useState([]);
+    
     //actions för att ända antal frågor coh namn 
+
+    //hämta kategorier
+    useEffect(()=>{
+        axios.get("http://localhost:8080/categories")
+             .then((response)=>{
+                 setCategories(response.data);
+                 console.log(response.data);
+                });
+    },[]);
 
     const changeNumber = () => {
         //set state via props 
@@ -16,8 +27,6 @@ function ChooseParams(props){
         //set states och anropa fetch funktionen
     }
 
-    //eventuellt sätta in val av kategori- hittaa nån lösning isf
-    //kanske kunna välja typ också- multiple/TF
     return(
         <div>
             <h2> Make your choises for the game: </h2>
@@ -38,6 +47,14 @@ function ChooseParams(props){
                     <option selected value="easy">Easy</option>
                     <option value="medium">Medium</option>
                     <option value="hard">Hard</option>
+                </select>
+                <label> Select your category: </label>
+                <select> 
+                    {categories.map((cat) =>{
+                        return(
+                            <option key={cat.id}>{cat.name}</option>
+                        )
+                    })}
                 </select>
                 <label> Your name: </label>
                 <input type="text"> </input>

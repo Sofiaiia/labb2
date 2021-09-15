@@ -11,6 +11,7 @@ function Game(){
 
     const [currentQuestion,setCurrent] = useState(0);  
     const [questions,setQuestions] = useState([]);
+    const [params, setParams] = useState({number: 10, difficulty:"easy"});
     //const [loading,setLoading] = useState(true);
 
     const dispatch = useDispatch();
