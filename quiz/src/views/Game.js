@@ -5,7 +5,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import { selectPoints,incrementPoint,numOfQuestions,setName,setTime,} from '../store/resultSlice';
 import QuestionsComp from '../Components/QuestionsComp';
 //import ChooseParams from '../Components/chooseParams';
-//import ShowResult from '../Components/ShowResult';
+import ShowResult from '../Components/ShowResult';
 
 function Game(){
 
@@ -31,7 +31,7 @@ function Game(){
     return(
         <div>
           {currentQuestion < 10 ? ( <QuestionsComp questions={questions} currentQuestion={currentQuestion} setCurrent={setCurrent}> </QuestionsComp>)
-          :( "" )}
+          :( <ShowResult> </ShowResult> )}
         </div>
     )
 }

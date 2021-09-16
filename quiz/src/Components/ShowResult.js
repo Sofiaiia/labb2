@@ -9,17 +9,19 @@ import { selectPoints,selectName,selectQuestions,selectTime} from '../store/resu
     const totalPoints = useSelector(selectPoints);
     const name = useSelector(selectName);
     const numOfQuestions = useSelector(selectQuestions);
-    const time = useSelector = useSelector(selectTime);
 
+    //const time = useSelector = useSelector(selectTime);
+    //<p> Your time: {time}</p>
+    
     return(
         <div>
             <h2> QUIZ COMPLETED </h2>
 
             <p> Total number of questions: {numOfQuestions} </p>
             <p> Totalt points: {totalPoints} </p>
-            <p> That means you have XX% right </p>
-            <p> Your time: {time}</p>
-            <h3> <strong> GOOD JOB {name}</strong> - you can now find your result in the toplist! </h3>
+            <p> That means you have {totalPoints/numOfQuestions}% right </p>
+            
+            <h4> GOOD JOB {name} - you can now find your result in the toplist! </h4>
         </div>
     )
  }
