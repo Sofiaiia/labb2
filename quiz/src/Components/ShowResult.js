@@ -2,6 +2,7 @@ import React from "react";
 import {useSelector, useDispatch} from 'react-redux';
 import { selectPoints,selectName,selectQuestions,selectTime} from '../store/resultSlice';
 import '../styling/result.css';
+import price from '../pictures/price.png';
 
  function ShowResult(){
 
@@ -11,19 +12,18 @@ import '../styling/result.css';
     const name = useSelector(selectName);
     const numOfQuestions = useSelector(selectQuestions);
 
-    //const time = useSelector = useSelector(selectTime);
+    //const timeee = useSelector = useSelector(selectTime);
     //<p> Your time: {time}</p>
     
     return(
         <div>
+            <img src={price} alt="price" height="350"/>
             <h2 className="resultHeader"> QUIZ COMPLETED </h2>
-
             <p> Total number of questions: {numOfQuestions} </p>
             <p> Totalt points: {totalPoints} </p>
             <p> That means you have {totalPoints/numOfQuestions}% right </p>
-            
             <p className="lastHeading"> GOOD JOB {name} - </p>
-            <p className="lastHeading"> you can now find your result in the toplist! </p>
+            <p> you can now find your result in the toplist! </p>
         </div>
     )
  }
