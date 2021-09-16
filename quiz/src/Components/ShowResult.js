@@ -19,9 +19,11 @@ import price from '../pictures/price.png';
         <div>
             <img src={price} alt="price" height="350"/>
             <h2 className="resultHeader"> QUIZ COMPLETED </h2>
-            <p> Total number of questions: {numOfQuestions} </p>
-            <p> Totalt points: {totalPoints} </p>
-            <p> That means you have {totalPoints/numOfQuestions}% right </p>
+            <div className="boxResult">
+                <p> Total number of questions: {numOfQuestions} </p>
+                <p> Totalt points: {totalPoints} </p>
+                <p> That means you have {totalPoints/numOfQuestions}% right </p>
+            </div>
             <p className="lastHeading"> GOOD JOB {name} - </p>
             <p> you can now find your result in the toplist! </p>
         </div>

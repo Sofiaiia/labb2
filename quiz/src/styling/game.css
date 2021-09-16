@@ -22,7 +22,7 @@ p,h2{
     margin-right: 10%;
     padding: 20px 20px 20px 20px;
     font-size: 25px;
-    border: 10px double white;
+    border: 10px groove white;
 }
 .questionHeading{
     font-size: 50px;
