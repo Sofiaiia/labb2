@@ -44,10 +44,12 @@ function QuestionsComp(props){
                   index === props.currentQuestion ?
                   <div key={fraga.question}> 
                     <h2 className="questionHeading"> Question: {props.currentQuestion +1 } </h2>
-                    <p> Points: {totalPoints}</p>
-                    <div>
-                        <p> Category: </p>
-                        <p>{fraga.category}</p>
+                    <div className="container">
+                        <p className="header1"> Points: </p>
+                        <p className="content1"> {totalPoints}</p>
+                        <p className="header2"> Category: </p>
+                        <p className="content2">{fraga.category}</p>
+                        <p className="header3"> Time:</p>
                     </div>
                     <p className="questionBox">{fraga.question}</p> 
                     <button key={fraga.correct_answer} onClick={() =>checkAnswer(fraga.correct_answer,fraga.correct_answer)} className="answerButton">{fraga.correct_answer}</button>
