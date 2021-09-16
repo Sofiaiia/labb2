@@ -27,10 +27,10 @@ function Game(){
         //återställ storen
     },[]);
 
-    //RENDERING
     return(
         <div>
-          {currentQuestion < 10 ? ( <QuestionsComp questions={questions} currentQuestion={currentQuestion} setCurrent={setCurrent}> </QuestionsComp>)
+          {currentQuestion < 10 
+          ?( <QuestionsComp questions={questions} currentQuestion={currentQuestion} setCurrent={setCurrent}> </QuestionsComp>)
           :( <ShowResult> </ShowResult> )}
         </div>
     )

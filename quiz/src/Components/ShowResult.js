@@ -1,6 +1,7 @@
 import React from "react";
 import {useSelector, useDispatch} from 'react-redux';
 import { selectPoints,selectName,selectQuestions,selectTime} from '../store/resultSlice';
+import '../styling/result.css';
 
  function ShowResult(){
 
@@ -15,13 +16,14 @@ import { selectPoints,selectName,selectQuestions,selectTime} from '../store/resu
     
     return(
         <div>
-            <h2> QUIZ COMPLETED </h2>
+            <h2 className="resultHeader"> QUIZ COMPLETED </h2>
 
             <p> Total number of questions: {numOfQuestions} </p>
             <p> Totalt points: {totalPoints} </p>
             <p> That means you have {totalPoints/numOfQuestions}% right </p>
             
-            <h4> GOOD JOB {name} - you can now find your result in the toplist! </h4>
+            <p className="lastHeading"> GOOD JOB {name} - </p>
+            <p className="lastHeading"> you can now find your result in the toplist! </p>
         </div>
     )
  }
