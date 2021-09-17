@@ -26,7 +26,7 @@ function Game(){
                  //setLoading(false);
                 });
         //återställ storen
-    },[]);
+    },[params]);
 
     return(
         <div>

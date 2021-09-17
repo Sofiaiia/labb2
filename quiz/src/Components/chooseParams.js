@@ -7,9 +7,9 @@ function ChooseParams(props){
     const [categories, setCategories] = useState([]);
     const [choises,setChoises] = useState({number: 10, difficulty:"easy", category:"", name:""});
     
-    //actions för att ända antal frågor coh namn 
+    //actions för att ända antal frågor och namn 
 
-    //hämta kategorier- nått fel med länken 
+    //hämta kategorier- nått fel med länken!!!! 
     useEffect(()=>{
         axios.get("http://localhost:8080/categories")
              .then((response)=>{
@@ -26,6 +26,7 @@ function ChooseParams(props){
     const submit = () => {
         //set states och anropa fetch funktionen
         props.setLoading(false);
+        props.setParams(choises);
         console.log(choises.number);
         console.log(choises.difficulty);
         console.log(choises.name);
@@ -33,7 +34,7 @@ function ChooseParams(props){
 
     return(
         <div>
-            <h2> Make your choises for the game: </h2>
+            <h2 className="header"> Make your choises for the game: </h2>
             <form onSubmit={submit}>
                 <label className="name"> Number of questions: </label>
                 <select value={choises.number} onChange={handleChange} className="dropDown" name="number"> 
