@@ -68,9 +68,9 @@ function ChooseParams(props){
                 </select>
                 <br/>
                 <label className="name"> Your name: </label>
-                <input type="text" value={props.params.name} name={props.params.value}/> 
+                <input type="text" value={props.params.name} name={props.params.value} className="input"/> 
                 <br/>
-                <input type="submit" value="START"/>
+                <input type="submit" value="START" className="button"/>
             </form>
         </div>
     )

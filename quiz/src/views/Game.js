@@ -17,12 +17,13 @@ function Game(){
     const dispatch = useDispatch();
     const totalPoints = useSelector(selectPoints);
     //actions consts för att kunna ändra i slicern
-
+   
     useEffect(()=>{
-        axios.get("https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple")
+        axios.get(`https://opentdb.com/api.php?amount=${params.number}&difficulty=${params.difficulty}&type=multiple`)
              .then((response)=>{
                  setQuestions(response.data.results);
                  console.log(response.data.results);
+                 //setLoading(false);
                 });
         //återställ storen
     },[]);
