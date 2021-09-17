@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from "react";
 import axios from "axios";
+import '../styling/params.css';
 
 function ChooseParams(props){
 
@@ -38,8 +39,8 @@ function ChooseParams(props){
         <div>
             <h2> Make your choises for the game: </h2>
             <form onSubmit={submit}>
-                <label> Number of questions: </label>
-                <select value="" onChange={changeNumber}> 
+                <label className="name"> Number of questions: </label>
+                <select value="" onChange={changeNumber} className="dropDown"> 
                    <option selected value="10"> 10 </option> 
                    <option value="15"> 15 </option>
                    <option value="20"> 20 </option>
@@ -50,15 +51,15 @@ function ChooseParams(props){
                    <option value="45"> 45 </option>
                 </select>
                 <br/>
-                <label> Difficulty level: </label>
-                <select value="" onChange={changeDifficulty}>
+                <label className="name"> Difficulty level: </label>
+                <select value="" onChange={changeDifficulty} className="dropDown">
                     <option selected value="easy">Easy</option>
                     <option value="medium">Medium</option>
                     <option value="hard">Hard</option>
                 </select>
                 <br/>
-                <label> Select your category: </label>
-                <select> 
+                <label className="name"> Select your category: </label>
+                <select className="dropDown"> 
                     {categories.map((cat) =>{
                         return(
                             <option key={cat.id}>{cat.name}</option>
@@ -66,7 +67,7 @@ function ChooseParams(props){
                     })}
                 </select>
                 <br/>
-                <label> Your name: </label>
+                <label className="name"> Your name: </label>
                 <input type="text" value={props.params.name} name={props.params.value}/> 
                 <br/>
                 <input type="submit" value="START"/>
