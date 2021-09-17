@@ -5,6 +5,7 @@ import '../styling/params.css';
 function ChooseParams(props){
 
     const [categories, setCategories] = useState([]);
+    const [choises,setChoises] = useState({number: 10, difficulty:"easy", category:"", name:""});
     
     //actions för att ända antal frågor coh namn 
 
@@ -17,30 +18,25 @@ function ChooseParams(props){
                 });
     },[]);
 
-    const changeNumber = () => {
-        //set state via props 
-    }
-    const changeDifficulty = () => {
-        //set state via props
+    const handleChange = (event) => {
+        setChoises({...choises,[event.target.name]:event.target.value});
+        
     }
 
     const submit = () => {
         //set states och anropa fetch funktionen
         props.setLoading(false);
+        console.log(choises.number);
+        console.log(choises.difficulty);
+        console.log(choises.name);
     }
-    /* 
-        <label> Your name: </label>
-                <input type="text"> </input>
-
-                <input type="submit"> START </input>
-    */
 
     return(
         <div>
             <h2> Make your choises for the game: </h2>
             <form onSubmit={submit}>
                 <label className="name"> Number of questions: </label>
-                <select value="" onChange={changeNumber} className="dropDown"> 
+                <select value={choises.number} onChange={handleChange} className="dropDown" name="number"> 
                    <option selected value="10"> 10 </option> 
                    <option value="15"> 15 </option>
                    <option value="20"> 20 </option>
@@ -52,7 +48,7 @@ function ChooseParams(props){
                 </select>
                 <br/>
                 <label className="name"> Difficulty level: </label>
-                <select value="" onChange={changeDifficulty} className="dropDown">
+                <select value="" onChange={handleChange} className="dropDown" name="difficulty">
                     <option selected value="easy">Easy</option>
                     <option value="medium">Medium</option>
                     <option value="hard">Hard</option>
@@ -68,7 +64,7 @@ function ChooseParams(props){
                 </select>
                 <br/>
                 <label className="name"> Your name: </label>
-                <input type="text" value={props.params.name} name={props.params.value} className="input"/> 
+                <input type="text" value={choises.name} name="name" className="input" onChange={handleChange}/> 
                 <br/>
                 <input type="submit" value="START" className="button"/>
             </form>
