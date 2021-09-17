@@ -4,15 +4,15 @@ import '../styling/game.css';
 import {useSelector, useDispatch} from 'react-redux';
 import { selectPoints,incrementPoint,numOfQuestions,setName,setTime,} from '../store/resultSlice';
 import QuestionsComp from '../Components/QuestionsComp';
-//import ChooseParams from '../Components/chooseParams';
+import ChooseParams from '../Components/ChooseParams';
 import ShowResult from '../Components/ShowResult';
 
 function Game(){
 
     const [currentQuestion,setCurrent] = useState(0);  
     const [questions,setQuestions] = useState([]);
-    const [params, setParams] = useState({number: 10, difficulty:"easy"});
-    //const [loading,setLoading] = useState(true);
+    const [params, setParams] = useState({number: 10, difficulty:"easy", category:"", name:""});
+    const [loading,setLoading] = useState(true);
 
     const dispatch = useDispatch();
     const totalPoints = useSelector(selectPoints);
@@ -29,9 +29,11 @@ function Game(){
 
     return(
         <div>
-          {currentQuestion < 10 
+          {loading 
+          ?(<ChooseParams params={params} setParams={setParams} setLoading={setLoading}> </ChooseParams>)
+          :(currentQuestion < 10 
           ?( <QuestionsComp questions={questions} currentQuestion={currentQuestion} setCurrent={setCurrent}> </QuestionsComp>)
-          :( <ShowResult> </ShowResult> )}
+          :( <ShowResult> </ShowResult> ))}
         </div>
     )
 }
