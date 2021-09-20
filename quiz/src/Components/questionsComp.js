@@ -6,6 +6,9 @@ import { Alert } from '@material-ui/lab';
 import { Collapse } from '@material-ui/core';
 import CheckIcon from '@material-ui/icons/Check';
 import ClearIcon from '@material-ui/icons/Clear';
+import useSound from 'use-sound';
+import right from '../sounds/right.wav';
+import wrong from '../sounds/wrong.wav';
 
 function QuestionsComp(props){
   
@@ -15,14 +18,19 @@ function QuestionsComp(props){
     const dispatch = useDispatch();
     const totalPoints = useSelector(selectPoints);
 
+    const [playRight] = useSound(right,{volume:0.5});
+    const [playWrong] = useSound(wrong,{volume:0.5});
+
     const checkAnswer = (answer,correct) =>{
         props.setCurrent(props.currentQuestion +1);
         if(answer === correct){
             setShow(true);
             dispatch(incrementPoint());
+            playRight();
         }
         else{
             setShow2(true);
+            playWrong();
         } 
     }
     
