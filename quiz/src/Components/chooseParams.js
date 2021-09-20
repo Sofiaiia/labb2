@@ -9,7 +9,6 @@ function ChooseParams(props){
     
     //actions för att ända antal frågor och namn 
 
-    //hämta kategorier- nått fel med länken!!!! 
     useEffect(()=>{
         axios.get("http://localhost:8080/categories")
              .then((response)=>{
@@ -28,10 +27,12 @@ function ChooseParams(props){
         //set states och anropa fetch funktionen
         props.setLoading(false);
         props.setParams(choises);
+        //hämta ut categori id 
 
         console.log(choises.number);
         console.log(choises.difficulty);
         console.log(choises.name);
+        console.log(choises.category);
     }
 
     return(
@@ -58,10 +59,10 @@ function ChooseParams(props){
                 </select>
                 <br/>
                 <label className="name"> Select your category: </label>
-                <select className="dropDown"> 
+                <select className="dropDown" onChange={handleChange} name="category"> 
                     {categories.map((cat) =>{
                         return(
-                            <option key={cat.id}>{cat.name}</option>
+                            <option key={cat.id} value={cat.id}>{cat.name}</option>
                         )
                     })}
                 </select>

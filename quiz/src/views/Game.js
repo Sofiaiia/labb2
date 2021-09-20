@@ -19,7 +19,7 @@ function Game(){
     //actions consts för att kunna ändra i slicern
    
     useEffect(()=>{
-        axios.get(`https://opentdb.com/api.php?amount=${params.number}&difficulty=${params.difficulty}&type=multiple`)
+        axios.get(`https://opentdb.com/api.php?amount=${params.number}&difficulty=${params.difficulty}&category=${params.category}&type=multiple`)
              .then((response)=>{
                  setQuestions(response.data.results);
                  console.log(response.data.results);
