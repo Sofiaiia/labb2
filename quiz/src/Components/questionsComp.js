@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styling/game.css';
 import {useSelector, useDispatch} from 'react-redux';
-import { selectPoints,incrementPoint,numOfQuestions,setName,setTime,} from '../store/resultSlice';
+import { selectPoints,incrementPoint,setTime,} from '../store/resultSlice';
 import { Alert } from '@material-ui/lab';
 import { Collapse } from '@material-ui/core';
 import CheckIcon from '@material-ui/icons/Check';

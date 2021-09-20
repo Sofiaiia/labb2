@@ -1,13 +1,14 @@
 import React,{useState,useEffect} from "react";
 import axios from "axios";
 import '../styling/params.css';
+import {useDispatch} from 'react-redux';
+import {numOfQuestions,setName,} from '../store/resultSlice';
 
 function ChooseParams(props){
 
     const [categories, setCategories] = useState([]);
     const [choises,setChoises] = useState({number: 10, difficulty:"easy", category:"", name:""});
-    
-    //actions för att ända antal frågor och namn 
+    const dispatch = useDispatch();
 
     useEffect(()=>{
         axios.get("http://localhost:8080/categories")
@@ -24,15 +25,11 @@ function ChooseParams(props){
 
     const submit = (event) => {
         event.preventDefault();
-        //set states och anropa fetch funktionen
         props.setLoading(false);
         props.setParams(choises);
-        //hämta ut categori id 
-
-        console.log(choises.number);
-        console.log(choises.difficulty);
-        console.log(choises.name);
-        console.log(choises.category);
+        //Sätt in amont och namn i store 
+        dispatch(numOfQuestions(choises.number));
+        dispatch(setName(choises.name));
     }
 
     return(

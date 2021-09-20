@@ -1,5 +1,5 @@
 import React from "react";
-import {useSelector, useDispatch} from 'react-redux';
+import {useSelector} from 'react-redux';
 import { selectPoints,selectName,selectQuestions,selectTime} from '../store/resultSlice';
 import '../styling/result.css';
 import price from '../pictures/price.png';
@@ -22,7 +22,7 @@ import price from '../pictures/price.png';
             <div className="boxResult">
                 <p> Total number of questions: {numOfQuestions} </p>
                 <p> Totalt points: {totalPoints} </p>
-                <p> That means you have {totalPoints/numOfQuestions}% right </p>
+                <p> That means you have {(totalPoints/numOfQuestions) * 100}% right </p>
             </div>
             <p className="lastHeading"> GOOD JOB {name} - </p>
             <p> you can now find your result in the toplist! </p>

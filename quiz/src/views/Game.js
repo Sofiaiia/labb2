@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import '../styling/game.css';
-import {useSelector, useDispatch} from 'react-redux';
-import { selectPoints,incrementPoint,numOfQuestions,setName,setTime,} from '../store/resultSlice';
+import {useSelector} from 'react-redux';
+import {selectQuestions,} from '../store/resultSlice';
 import QuestionsComp from '../Components/QuestionsComp';
 import ChooseParams from '../Components/ChooseParams';
 import ShowResult from '../Components/ShowResult';
@@ -14,8 +14,7 @@ function Game(){
     const [params, setParams] = useState({number: 10, difficulty:"easy", category:"", name:""});
     const [loading,setLoading] = useState(true);
 
-    const dispatch = useDispatch();
-    const totalPoints = useSelector(selectPoints);
+    const totalquestions = useSelector(selectQuestions);
     //actions consts för att kunna ändra i slicern
    
     useEffect(()=>{
@@ -31,7 +30,7 @@ function Game(){
         <div>
           {loading 
           ?(<ChooseParams params={params} setParams={setParams} setLoading={setLoading}> </ChooseParams>)
-          :(currentQuestion < 10 
+          :(currentQuestion < totalquestions 
           ?( <QuestionsComp questions={questions} currentQuestion={currentQuestion} setCurrent={setCurrent}> </QuestionsComp>)
           :( <ShowResult> </ShowResult> ))}
         </div>
