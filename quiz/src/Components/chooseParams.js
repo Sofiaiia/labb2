@@ -23,10 +23,12 @@ function ChooseParams(props){
         
     }
 
-    const submit = () => {
+    const submit = (event) => {
+        event.preventDefault();
         //set states och anropa fetch funktionen
         props.setLoading(false);
         props.setParams(choises);
+
         console.log(choises.number);
         console.log(choises.difficulty);
         console.log(choises.name);
@@ -67,7 +69,7 @@ function ChooseParams(props){
                 <label className="name"> Your name: </label>
                 <input type="text" value={choises.name} name="name" className="input" onChange={handleChange}/> 
                 <br/>
-                <input type="submit" value="START" className="button"/>
+                <button type="submit" value="START" className="button"> START </button>
             </form>
         </div>
     )

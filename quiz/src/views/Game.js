@@ -25,7 +25,6 @@ function Game(){
                  console.log(response.data.results);
                  //setLoading(false);
                 });
-        //återställ storen
     },[params]);
 
     return(
