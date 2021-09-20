@@ -11,17 +11,16 @@ import price from '../pictures/price.png';
     const totalPoints = useSelector(selectPoints);
     const name = useSelector(selectName);
     const numOfQuestions = useSelector(selectQuestions);
-
-    //const timeee = useSelector = useSelector(selectTime);
-    //<p> Your time: {time}</p>
+    const time = useSelector(selectTime);
     
     return(
         <div>
-            <img src={price} alt="price" height="350"/>
+            <img src={price} alt="price" height="300"/>
             <h2 className="resultHeader"> QUIZ COMPLETED </h2>
             <div className="boxResult">
                 <p> Total number of questions: {numOfQuestions} </p>
                 <p> Totalt points: {totalPoints} </p>
+                <p> Your time: {time}</p>
                 <p> That means you have {(totalPoints/numOfQuestions) * 100}% right </p>
             </div>
             <p className="lastHeading"> GOOD JOB {name} - </p>

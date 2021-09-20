@@ -15,7 +15,6 @@ function Game(){
     const [loading,setLoading] = useState(true);
 
     const totalquestions = useSelector(selectQuestions);
-    //actions consts för att kunna ändra i slicern
    
     useEffect(()=>{
         axios.get(`https://opentdb.com/api.php?amount=${params.number}&difficulty=${params.difficulty}&category=${params.category}&type=multiple`)
