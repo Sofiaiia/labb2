@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Game from './Game';
 import Rules from './Rules';
 import Toplist from './Toplist';
+import '../styling/start.css';
 
 function Start(){
 
@@ -25,11 +26,11 @@ function Start(){
                     ?(<Toplist> </Toplist>)
                     :(
                         <div>
-                        <button onClick={() => setGame(true)}> PLAY GAME </button>
+                        <button className="choise" onClick={() => setGame(true)}> PLAY GAME </button>
                         <br/>
-                        <button onClick={() => setRules(true)}> RULES </button>
+                        <button className="choise" onClick={() => setRules(true)}> RULES </button>
                         <br/>
-                        <button onClick={() => setToplist(true)}> TOPLIST </button>
+                        <button className="choise" onClick={() => setToplist(true)}> TOPLIST </button>
                     </div>
                     )))
             }
