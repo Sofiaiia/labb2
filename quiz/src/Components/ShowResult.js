@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {useSelector} from 'react-redux';
 import { selectPoints,selectName,selectQuestions,selectTime} from '../store/resultSlice';
 import '../styling/result.css';
 import price from '../pictures/price.png';
+import useSound from 'use-sound';
 
  function ShowResult(){
 
@@ -12,6 +13,12 @@ import price from '../pictures/price.png';
     const name = useSelector(selectName);
     const numOfQuestions = useSelector(selectQuestions);
     const time = useSelector(selectTime);
+
+    
+
+    useEffect(()=>{
+
+    },[]);
     
     return(
         <div>
@@ -27,6 +34,6 @@ import price from '../pictures/price.png';
             <p> you can now find your result in the toplist! </p>
         </div>
     )
- }
+ } 
 
  export default ShowResult;

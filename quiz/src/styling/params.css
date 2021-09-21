@@ -43,6 +43,7 @@
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: all .3s ease-in-out 0s;
+  
 }
 .button:hover, .button:focus {
     color: white;
@@ -56,7 +57,8 @@
   
   .button::after {
     content: '';
-    width: 30px; height: 30px;
+    width: 30px; 
+    height: 30px;
     border-radius: 100%;
     border: 6px solid #E62EA6;
     position: absolute;
@@ -65,6 +67,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     animation: ring 1.5s infinite;
+    margin-top: 60px;
   }
   
  .button:hover::after, button:focus::after {
