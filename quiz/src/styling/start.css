@@ -2,5 +2,22 @@
 
 .choise{
     font-family: 'Poppins',sans-serif;
-    font-size: 25px;
+    font-size: 35px;
+    margin-top: 30px;
+    width: 50%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: 1s;
+    box-shadow: 6px 6px 0 black;
+    transform: skewX(-15deg);
+    background-color: #E62EA6;
+    color: white;
+}
+.choise:focus{
+    outline: none;
+}
+
+.choise:hover{
+    box-shadow: 10px 10px 0 #E6D800;
+    transform: skewX(15deg) 
 }

@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+
 .headingRules{
     color: white;
     font-size: 50px;
+    font-family: 'Poppins',sans-serif;
 }
 h3{
     color: white;
     font-size: 40px;
+    font-family: 'Poppins',sans-serif;
 }
 .numberPink{
     background-color: #E62EA6;
@@ -12,36 +16,38 @@ h3{
     width: 20%;
     margin-left: 27%;
     padding: 80px 20px 80px 20px;
-    border-radius: 50%;
     font-size: 20px;
     margin-top: 50px;
+    font-family: 'Poppins',sans-serif;
 }
 .numberPurple{
     background-color: #6E1299;
     color: white;
     width: 20%;
     margin-left: 50%;
+    margin-top: -10%;
     padding: 80px 20px 80px 20px;
-    border-radius: 50%;
     font-size: 20px;
+    font-family: 'Poppins',sans-serif;
 }
 .numberYellow{
     background-color: #E6D800;
     color: black;
     width: 20%;
     margin-left: 27%;
+    margin-top: -10%;
     padding: 80px 20px 80px 20px;
-    border-radius: 50%;
     font-size: 20px;
+    font-family: 'Poppins',sans-serif;
 }
 .numberPink2{
     background-color: #E62EA6;
     color: white;
     width: 20%;
     margin-left: 50%;
+    margin-top: -10%;
     padding: 80px 40px 80px 40px;
-    border-radius: 50%;
-   
+    font-family: 'Poppins',sans-serif;
     font-size: 20px;
 }
 .numberPurple2{
@@ -49,21 +55,18 @@ h3{
     color: white;
     width: 20%;
     margin-left: 27%;
+    margin-top: -10%;
     padding: 80px 20px 80px 20px;
-    border-radius: 50%;
     font-size: 20px;
+    font-family: 'Poppins',sans-serif;
 }
 .numberYellow2{
     background-color: #E6D800;
     color: black;
     width: 20%;
     margin-left: 50%;
+    margin-top: -10%;
     padding: 80px 40px 80px 40px;
-    border-radius: 50%;
     font-size: 20px;
-}
-.box{
-    border: #01630E 20px double;
-    width: 70%;
-    margin-left: 10%;
+    font-family: 'Poppins',sans-serif;
 }
