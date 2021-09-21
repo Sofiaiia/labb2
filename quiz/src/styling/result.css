@@ -1,15 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i'); 
 
 .resultHeader{
     font-size: 50px;
+    font-family: 'Poppins',sans-serif;
 }
 .lastHeading{
     color: white;
     font-size: 30px;
     font-weight: bold;
+    font-family: 'Poppins',sans-serif;
 }
 .text{
     font-size: 25px;
     color: white;
+    font-family: 'Poppins',sans-serif;
 }
 .boxResult{
     position: relative;
