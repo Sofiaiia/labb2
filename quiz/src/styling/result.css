@@ -1,22 +1,50 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:900i'); 
 
 .resultHeader{
     font-size: 50px;
-    font-family: 'Poppins',sans-serif;
 }
 .lastHeading{
     color: white;
     font-size: 30px;
     font-weight: bold;
-    font-family: 'Poppins',sans-serif;
 }
-p{
-    font-size: 20px;
+.text{
+    font-size: 25px;
     color: white;
-    font-family: 'Poppins',sans-serif;
 }
 .boxResult{
-    border: #E62EA6 20px groove;
+    position: relative;
+    margin-left: 15%;
     width: 70%;
-    margin-left: 10%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: #2B303D;;
 }
+.boxResult:before, .boxResult:after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+      #0000ff, #00ff00,#ffff00, #ff0000);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: steam 20s linear infinite;
+  }
+  
+  @keyframes steam {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  .boxResult:after {
+    filter: blur(50px);
+  }
