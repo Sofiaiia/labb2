@@ -25,7 +25,7 @@ h3{
     color: white;
     width: 20%;
     margin-left: 50%;
-    margin-top: -10%;
+    margin-top: -7%;
     padding: 80px 20px 80px 20px;
     font-size: 20px;
     font-family: 'Poppins',sans-serif;
@@ -35,7 +35,7 @@ h3{
     color: black;
     width: 20%;
     margin-left: 27%;
-    margin-top: -10%;
+    margin-top: -7%;
     padding: 80px 20px 80px 20px;
     font-size: 20px;
     font-family: 'Poppins',sans-serif;
@@ -45,7 +45,7 @@ h3{
     color: white;
     width: 20%;
     margin-left: 50%;
-    margin-top: -10%;
+    margin-top: -7%;
     padding: 80px 40px 80px 40px;
     font-family: 'Poppins',sans-serif;
     font-size: 20px;
@@ -55,7 +55,7 @@ h3{
     color: white;
     width: 20%;
     margin-left: 27%;
-    margin-top: -10%;
+    margin-top: -7%;
     padding: 80px 20px 80px 20px;
     font-size: 20px;
     font-family: 'Poppins',sans-serif;
@@ -65,8 +65,33 @@ h3{
     color: black;
     width: 20%;
     margin-left: 50%;
-    margin-top: -10%;
+    margin-top: -7%;
     padding: 80px 40px 80px 40px;
     font-size: 20px;
     font-family: 'Poppins',sans-serif;
+}
+@media screen and (min-width:1300px){
+    .numberPink{
+        margin-left: 27%;
+    }
+    .numberPurple{
+        margin-left: 47%;
+        margin-top: -3%;
+    }
+    .numberYellow{
+        margin-left: 27%;
+        margin-top: -3%;
+    }
+    .numberPink2{
+        margin-left: 47%;
+        margin-top: -3%;
+    }
+    .numberPurple2{
+        margin-left: 27%;
+        margin-top: -3%;
+    }
+    .numberYellow2{
+        margin-left: 47%;
+        margin-top: -3%;
+    }
 }
