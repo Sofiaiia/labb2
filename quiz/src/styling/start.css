@@ -19,5 +19,6 @@
 
 .choise:hover{
     box-shadow: 10px 10px 0 #E6D800;
-    transform: skewX(15deg) 
+    transform: skewX(15deg); 
+    
 }

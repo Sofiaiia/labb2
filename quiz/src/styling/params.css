@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i'); 
+
 .name{
     color:white;
     font-size: 25px;
@@ -12,18 +14,73 @@
 }
 .button{
     font-size: 20px;
-    margin-top: 30px;
+    margin-top: 60px;
     padding: 10px 30px 10px 30px;
-    background-color: #6E1299;
+    background-color: #E62EA6;
     color: white;
-    border: 5px groove #E62EA6;
+    border: none;
     font-weight: bold;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px rgba(240, 57, 157, 0.534);
+    transition: all 0.3s ease-in-out 0s;
+    min-width: 300px;
+    min-height: 60px;
+    font-family: 'Poppins',sans-serif;
 }
-.button:hover{
-    color: black;
-    background-color: #E6D800;
-    font-weight: bold;
+.button::before{
+    content: '';
+  border-radius: 1000px;
+  min-width: calc(300px + 12px);
+  min-height: calc(60px + 12px);
+  border: 4px solid #6E1299;
+  box-shadow: 0 0 60px rgba(240, 57, 157, 0.534);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
 }
+.button:hover, .button:focus {
+    color: white;
+    transform: translateY(-6px);
+    background-color: #E62EA6;
+  }
+  
+  .button:hover::before, button:focus::before {
+    opacity: 1;
+  }
+  
+  .button::after {
+    content: '';
+    width: 30px; height: 30px;
+    border-radius: 100%;
+    border: 6px solid #E62EA6;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+  }
+  
+ .button:hover::after, button:focus::after {
+    animation: none;
+    display: none;
+  }
+  
+  @keyframes ring {
+    0% {
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+    }
+    100% {
+      width: 300px;
+      height: 300px;
+      opacity: 0;
+    }
+  }
 .header{
     font-size: 40px;
 }
