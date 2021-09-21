@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i'); 
 h2{
     color: white;
     font-weight: bold;
+    font-family: 'Poppins',sans-serif;
 }
 .answerButton{
     color: white;
@@ -13,6 +15,7 @@ h2{
    
     border: 10px groove #6E1299;
     font-weight: bold;
+    font-family: 'Poppins',sans-serif;
 }
 .answerButton:hover{
     background-color: #E6D800;
@@ -28,49 +31,58 @@ h2{
     font-weight: bold;
     border: 10px groove white;
     color: white;
+    font-family: 'Poppins',sans-serif;
 }
 .questionHeading{
     font-size: 50px;
+    font-family: 'Poppins',sans-serif;
 }
 .alertRight{
     background-color: greenyellow;
     width: 50%;
     margin-left: 25%;
     padding: 20px 0px 20px 0px;
+    font-family: 'Poppins',sans-serif;
 }
 .alertWrong{
     background-color: red;
     width: 50%;
     margin-left: 25%;
     padding: 20px 0px 20px 0px;
+    font-family: 'Poppins',sans-serif;
 }
 .header1{
     grid-area: header1;
     color: black;
     font-weight: bold;
     font-size: 25px;
+    font-family: 'Poppins',sans-serif;
 }
 .header2{
     grid-area: header2;
     color: black;
     font-weight: bold;
     font-size: 25px;
+    font-family: 'Poppins',sans-serif;
 }
 .header3{
     grid-area: header3;
     color: black;
     font-weight: bold;
     font-size: 25px;
+    font-family: 'Poppins',sans-serif;
 }
 .content1{
     grid-area: content1;
     color: black;
     font-size: 20px;
+    font-family: 'Poppins',sans-serif;
 }
 .content2{
     grid-area: content2;
     color: black;
     font-size: 20px;
+    font-family: 'Poppins',sans-serif;
 }
 .container{
     color: white;
