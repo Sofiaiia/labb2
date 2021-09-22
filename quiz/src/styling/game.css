@@ -85,6 +85,12 @@ h2{
     font-size: 20px;
     font-family: 'Poppins',sans-serif;
 }
+.content3{
+    grid-area: content3;
+    color: black;
+    font-size: 20px;
+    font-family: 'Poppins',sans-serif;
+}
 .container{
     color: white;
     display: grid;

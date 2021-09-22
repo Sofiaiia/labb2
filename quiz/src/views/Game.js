@@ -22,10 +22,34 @@ function Game(){
 
     const handleStart = () => {
         //Starta klockan 
+        setIsActive(true);
+        setIsStoped(true);
+        countRef.current = setInterval(() => {
+            setTimer((timer) => timer+1);
+        },1000);
     }
 
     const handleStop = () => {
         //stanna klockan 
+        clearInterval(countRef.current);
+        setIsStoped(false);
+    }
+
+    const handleReset = () => {
+        //resetta klockan 
+        clearInterval(countRef.current);
+        setIsActive(false);
+        setIsStoped(false);
+        setTimer(0);
+    }
+
+    const formatTime = () => {
+        const getSeconds = `0${(timer % 60)}`.slice(-2)
+        const minutes = `${Math.floor(timer / 60)}`
+        const getMinutes = `0${minutes % 60}`.slice(-2)
+        const getHours = `0${Math.floor(timer / 3600)}`.slice(-2)
+
+        return `${getHours} : ${getMinutes} : ${getSeconds}`
     }
    
     useEffect(()=>{
@@ -39,10 +63,10 @@ function Game(){
     return(
         <div>
           {loading 
-          ?(<ChooseParams params={params} setParams={setParams} setLoading={setLoading}> </ChooseParams>)
+          ?(<ChooseParams params={params} setParams={setParams} setLoading={setLoading} handleStart={handleStart}> </ChooseParams>)
           :(currentQuestion < totalquestions 
-          ?( <QuestionsComp questions={questions} currentQuestion={currentQuestion} setCurrent={setCurrent}> </QuestionsComp>)
-          :( <ShowResult> </ShowResult> ))}
+          ?( <QuestionsComp questions={questions} currentQuestion={currentQuestion} setCurrent={setCurrent} formatTime={formatTime}> </QuestionsComp>)
+          :( <ShowResult handleStop={handleStop}> </ShowResult> ))}
         </div>
     )
 }

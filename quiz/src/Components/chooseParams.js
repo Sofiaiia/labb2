@@ -30,6 +30,7 @@ function ChooseParams(props){
         dispatch(numOfQuestions(choises.number));
         dispatch(setName(choises.name));
         //starta tiden 
+        props.handleStart();
     }
 
     return(

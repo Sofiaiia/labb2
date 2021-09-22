@@ -34,7 +34,7 @@ function QuestionsComp(props){
         } 
     }
 
-    
+
     
     return(
         <div>
@@ -60,6 +60,7 @@ function QuestionsComp(props){
                         <p className="header2"> Category: </p>
                         <p className="content2">{fraga.category}</p>
                         <p className="header3"> Time:</p>
+                        <p className="content3">{props.formatTime()}</p>
                     </div>
                     <p className="questionBox">{fraga.question}</p> 
                     <button key={fraga.correct_answer} onClick={() =>checkAnswer(fraga.correct_answer,fraga.correct_answer)} className="answerButton">{fraga.correct_answer}</button>

@@ -5,7 +5,7 @@ import '../styling/result.css';
 import price from '../pictures/price.png';
 import useSound from 'use-sound';
 
- function ShowResult(){
+ function ShowResult(props){
 
     //sätt in nån bild från: https://pixabay.com/images/search/trophy/ 
 
@@ -16,6 +16,7 @@ import useSound from 'use-sound';
 
     useEffect(()=>{
         //stoppa tiden
+        props.handleStop();
     },[]);
     
     return(
