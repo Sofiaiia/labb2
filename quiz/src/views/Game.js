@@ -6,6 +6,8 @@ import {selectQuestions,} from '../store/resultSlice';
 import QuestionsComp from '../Components/QuestionsComp';
 import ChooseParams from '../Components/ChooseParams';
 import ShowResult from '../Components/ShowResult';
+ import {useDispatch} from 'react-redux';
+ import {setTime,} from '../store/resultSlice';
 
 function Game(){
 
@@ -20,6 +22,8 @@ function Game(){
     const [isStoped, setIsStoped] = useState(false);
     const countRef = useRef(null);
 
+    const dispatch = useDispatch();
+
     const handleStart = () => {
         //Starta klockan 
         setIsActive(true);
@@ -33,14 +37,8 @@ function Game(){
         //stanna klockan 
         clearInterval(countRef.current);
         setIsStoped(false);
-    }
-
-    const handleReset = () => {
-        //resetta klockan 
-        clearInterval(countRef.current);
-        setIsActive(false);
-        setIsStoped(false);
-        setTimer(0);
+        //sätt in tiden i storen
+        dispatch(setTime(formatTime()));
     }
 
     const formatTime = () => {

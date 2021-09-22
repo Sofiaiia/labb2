@@ -29,7 +29,6 @@ function ChooseParams(props){
         props.setParams(choises); 
         dispatch(numOfQuestions(choises.number));
         dispatch(setName(choises.name));
-        //starta tiden 
         props.handleStart();
     }
 

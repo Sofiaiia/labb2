@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styling/game.css';
 import {useSelector, useDispatch} from 'react-redux';
-import { selectPoints,incrementPoint,setTime,} from '../store/resultSlice';
+import { selectPoints,incrementPoint,} from '../store/resultSlice';
 import { Alert } from '@material-ui/lab';
 import { Collapse } from '@material-ui/core';
 import CheckIcon from '@material-ui/icons/Check';
@@ -34,8 +34,6 @@ function QuestionsComp(props){
         } 
     }
 
-
-    
     return(
         <div>
             <Collapse in={show1}> 
