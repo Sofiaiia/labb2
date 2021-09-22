@@ -26,10 +26,10 @@ function ChooseParams(props){
     const submit = (event) => {
         event.preventDefault();
         props.setLoading(false);
-        props.setParams(choises);
-        //Sätt in amont och namn i store 
+        props.setParams(choises); 
         dispatch(numOfQuestions(choises.number));
         dispatch(setName(choises.name));
+        //starta tiden 
     }
 
     return(

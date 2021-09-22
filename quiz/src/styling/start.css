@@ -12,6 +12,7 @@
     transform: skewX(-15deg);
     background-color: #E62EA6;
     color: white;
+    margin-bottom: 30px;
 }
 .choise:focus{
     outline: none;
@@ -20,5 +21,4 @@
 .choise:hover{
     box-shadow: 10px 10px 0 #E6D800;
     transform: skewX(15deg); 
-    
 }

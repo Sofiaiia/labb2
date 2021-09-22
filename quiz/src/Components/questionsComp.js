@@ -33,6 +33,8 @@ function QuestionsComp(props){
             playWrong();
         } 
     }
+
+    
     
     return(
         <div>

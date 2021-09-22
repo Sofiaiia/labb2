@@ -14,10 +14,8 @@ import useSound from 'use-sound';
     const numOfQuestions = useSelector(selectQuestions);
     const time = useSelector(selectTime);
 
-
-
     useEffect(()=>{
-
+        //stoppa tiden
     },[]);
     
     return(

@@ -25,7 +25,7 @@ function Start(){
                 :(toplist
                     ?(<Toplist> </Toplist>)
                     :(
-                        <div>
+                    <div>
                         <button className="choise" onClick={() => setGame(true)}> PLAY GAME </button>
                         <br/>
                         <button className="choise" onClick={() => setRules(true)}> RULES </button>
