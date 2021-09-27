@@ -14,6 +14,7 @@ function QuestionsComp(props){
   
     const [show1, setShow] = useState(false);
     const [show2, setShow2] = useState(false);
+    const [random,setRandom] = useState((Math.floor(Math.random()* 4)));
     
     const dispatch = useDispatch();
     const totalPoints = useSelector(selectPoints);
@@ -27,10 +28,14 @@ function QuestionsComp(props){
             setShow(true);
             dispatch(incrementPoint());
             playRight();
+            setRandom((Math.floor(Math.random()* 4)));
+            console.log(random);
         }
         else{
             setShow2(true);
             playWrong();
+            setRandom((Math.floor(Math.random()* 4)));
+            console.log(random);
         } 
     }
 
@@ -62,19 +67,27 @@ function QuestionsComp(props){
                      </Collapse>
                      
                     <p className="questionBox">{fraga.question}</p> 
-                    <button key={fraga.correct_answer} onClick={() =>checkAnswer(fraga.correct_answer,fraga.correct_answer)} className="answerButton">{fraga.correct_answer}</button>
-                    <div>
-                        {fraga.incorrect_answers.map((answer)=>{
+                    {fraga.incorrect_answers.map((answer,index) => {
                             return(
-                                <div key={answer}>
-                                    <button key={answer} onClick={() => checkAnswer(answer,fraga.correct_answer)} className="answerButton">{answer}</button>
-                                    <br/>
+                                <div>
+                                { index === random
+                                    ?(  <div>
+                                            <button key={fraga.correct_answer} onClick={() =>checkAnswer(fraga.correct_answer,fraga.correct_answer)} className="answerButton">{fraga.correct_answer}</button>
+                                            <button key={answer} onClick={() => checkAnswer(answer,fraga.correct_answer)} className="answerButton">{answer}</button>
+                                            <br/>
+                                        </div>
+                                    )
+                                    :(
+                                        <div key={answer}>
+                                            <button key={answer} onClick={() => checkAnswer(answer,fraga.correct_answer)} className="answerButton">{answer}</button>
+                                            <br/>
+                                        </div>
+                                    )}
                                 </div>
                             )
-                        })}
-                    </div>
+                     })}
+                    
                   </div>  : "" 
-                  
                   ) 
         })}
         </div>
