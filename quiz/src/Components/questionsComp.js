@@ -14,7 +14,7 @@ function QuestionsComp(props){
   
     const [show1, setShow] = useState(false);
     const [show2, setShow2] = useState(false);
-    const [random,setRandom] = useState((Math.floor(Math.random()* 4)));
+    const [random,setRandom] = useState((Math.floor(Math.random()* 3)));
     
     const dispatch = useDispatch();
     const totalPoints = useSelector(selectPoints);
@@ -23,19 +23,17 @@ function QuestionsComp(props){
     const [playWrong] = useSound(wrong,{volume:0.5});
 
     const checkAnswer = (answer,correct) =>{
+        setRandom((Math.floor(Math.random()* 3)));
+        console.log(random);
         props.setCurrent(props.currentQuestion +1);
         if(answer === correct){
             setShow(true);
             dispatch(incrementPoint());
             playRight();
-            setRandom((Math.floor(Math.random()* 4)));
-            console.log(random);
         }
         else{
             setShow2(true);
             playWrong();
-            setRandom((Math.floor(Math.random()* 4)));
-            console.log(random);
         } 
     }
 
