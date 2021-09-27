@@ -36,23 +36,11 @@ function QuestionsComp(props){
 
     return(
         <div>
-            <Collapse in={show1}> 
-                <Alert icon={<CheckIcon fontSize="inherit"/>} severity="success" variant="filled" onClose={()=>setShow(false)}>
-                     <strong> RIGHT ANSWER </strong>
-                </Alert>
-            </Collapse>
-            <Collapse in={show2}>
-                <Alert icon={<ClearIcon fontSize="inherit"/>} severity="error" variant="filled" onClose={()=>setShow2(false)}>
-                     <strong> WRONG ANSWER  </strong>
-                </Alert>
-            </Collapse>
-
             {props.questions.map((fraga,index)=> {
               return(
                   index === props.currentQuestion ?
                   <div key={fraga.question}> 
-                    <h2 className="questionHeading"> Question: {props.currentQuestion +1 } </h2>
-                    <div className="container">
+                  <div className="container">
                         <p className="header1"> Points: </p>
                         <p className="content1"> {totalPoints}</p>
                         <p className="header2"> Category: </p>
@@ -60,16 +48,31 @@ function QuestionsComp(props){
                         <p className="header3"> Time:</p>
                         <p className="content3">{props.formatTime()}</p>
                     </div>
+                    <h2 className="questionHeading"> Question: {props.currentQuestion +1 } </h2>
+
+                    <Collapse in={show1}> 
+                        <Alert icon={<CheckIcon fontSize="inherit"/>} severity="success" variant="filled" onClose={()=>setShow(false)}>
+                            <strong> RIGHT ANSWER </strong>
+                        </Alert>
+                    </Collapse>
+                    <Collapse in={show2}>
+                        <Alert icon={<ClearIcon fontSize="inherit"/>} severity="error" variant="filled" onClose={()=>setShow2(false)}>
+                            <strong> WRONG ANSWER  </strong>
+                        </Alert>
+                     </Collapse>
+                     
                     <p className="questionBox">{fraga.question}</p> 
                     <button key={fraga.correct_answer} onClick={() =>checkAnswer(fraga.correct_answer,fraga.correct_answer)} className="answerButton">{fraga.correct_answer}</button>
-                    {fraga.incorrect_answers.map((answer)=>{
-                        return(
-                            <div key={answer}>
-                                <button key={answer} onClick={() => checkAnswer(answer,fraga.correct_answer)} className="answerButton">{answer}</button>
-                                <br/>
-                            </div>
-                        )
-                    })}
+                    <div>
+                        {fraga.incorrect_answers.map((answer)=>{
+                            return(
+                                <div key={answer}>
+                                    <button key={answer} onClick={() => checkAnswer(answer,fraga.correct_answer)} className="answerButton">{answer}</button>
+                                    <br/>
+                                </div>
+                            )
+                        })}
+                    </div>
                   </div>  : "" 
                   
                   ) 

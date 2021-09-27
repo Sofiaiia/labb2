@@ -7,21 +7,18 @@ import useSound from 'use-sound';
 
  function ShowResult(props){
 
-    //sätt in nån bild från: https://pixabay.com/images/search/trophy/ 
-
     const totalPoints = useSelector(selectPoints);
     const name = useSelector(selectName);
     const numOfQuestions = useSelector(selectQuestions);
     const time = useSelector(selectTime);
 
     useEffect(()=>{
-        //stoppa tiden
         props.handleStop();
     },[]);
     
     return(
         <div className="wrap">
-            <img src={price} alt="price" height="300"/>
+            <img src={price} alt="price" height="200"/>
             <h2 className="resultHeader"> QUIZ COMPLETED </h2>
             <div className="boxResult">
                 <p className="text"> Total number of questions: {numOfQuestions} </p>
