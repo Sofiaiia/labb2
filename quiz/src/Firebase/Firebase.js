@@ -15,10 +15,30 @@ const auth = app.auth();
 const db= app.firestore();
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 
-const signInGoogle = async() => {};
-const signInEmail = async(email,password) => {};
+const signInGoogle = async() => {
+    
+    try{
+        const result = await auth.signInWithPopup(googleProvider);
+        const user = result.user;
+    } catch(error){
+        console.error(error);
+        alert(error.message);
+    }
+};
+
+const signInEmail = async(email,password) => {
+    try{
+        await auth.signInWithEmailAndPasseord(email,password);
+    }catch(error){
+        console.error(error);
+        alert(error.message);
+    }
+};
+
 const logout = () => {
     auth.signOut();
 };
+
+//registrera användare 
 
 export {auth,db,signInGoogle,signInEmail,logout};

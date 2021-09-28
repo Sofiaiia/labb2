@@ -1,11 +1,23 @@
-import {auth,db,signInGoogle,signInEmail,} from '../Firebase/Firebase.js';
+import {auth,signInGoogle,signInEmail,} from '../Firebase/Firebase.js';
 import {useAuthState} from 'react-firebase-hooks/auth'; 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 
 function Login(){
 
     const [email,setEmail] = useState("");
     const [password, setPassword] = useState(""); 
+    const [user,loading, error] = useAuthState(auth);
+    const history = useHistory();
+
+    useEffect(()=>{
+        if(loading){
+            //ifall amn vill ha en loading vy 
+            return;
+        }
+        if(user) history.replace("/start");
+    },[user,loading]);
+
     return(
         <div>
             <form onSubmit={() => signInEmail(email,password)}>
