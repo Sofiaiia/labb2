@@ -5,8 +5,6 @@ import { useHistory } from 'react-router';
 import '../styling/login.css';
 import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
-import { InputAdornment } from '@material-ui/core';
-//import GoogleIcon from '@material-ui/icons/Google';
 
 function Login(){
 
@@ -36,7 +34,9 @@ function Login(){
                     <br/>
                     <button type="submit" className="login-button"> Login </button> 
                     <br/>
-                    <button onClick={signInGoogle} className="google-button">Login with Google </button>
+                    <button onClick={signInGoogle} className="google-button">
+                        <div class="icons8-google"></div>
+                        Login with Google </button>
                     <br/>
                     <button> New user? Register here! </button>
                 </form>
