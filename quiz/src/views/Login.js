@@ -12,7 +12,7 @@ function Login(){
 
     useEffect(()=>{
         if(loading){
-            //ifall amn vill ha en loading vy 
+            //ifall man vill ha en loading vy 
             return;
         }
         if(user) history.replace("/start");

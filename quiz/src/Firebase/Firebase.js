@@ -1,4 +1,6 @@
-import firebase from 'firebase';
+import {initializeApp} from "firebase/app";
+import {getFirestore} from 'firebase/firestore/lite';
+import {GoogleAuthProvider,signInWithPopup,getAuth,signInWithEmailAndPassword,signOut} from 'firebase/auth';
 
 const firebaseConfig = {
     apiKey: "AIzaSyAo4EfQNMBxysu2fNp7-wDCDFeoGfgVyjk",
@@ -10,15 +12,15 @@ const firebaseConfig = {
     measurementId: "G-RYG316KGKB"
   };
     
-const app = firebase.initializeApp(firebaseConfig); 
-const auth = app.auth();
-const db= app.firestore();
-const googleProvider = new firebase.auth.GoogleAuthProvider();
+const app = initializeApp(firebaseConfig); 
+const auth = getAuth();
+const db= getFirestore(app);
+const googleProvider = new GoogleAuthProvider();
 
 const signInGoogle = async() => {
     
     try{
-        const result = await auth.signInWithPopup(googleProvider);
+        const result = await signInWithPopup(auth,googleProvider);
         const user = result.user;
     } catch(error){
         console.error(error);
@@ -28,7 +30,10 @@ const signInGoogle = async() => {
 
 const signInEmail = async(email,password) => {
     try{
-        await auth.signInWithEmailAndPasseord(email,password);
+        await signInWithEmailAndPassword(auth,email,password)
+        .then((userCredential)=>{
+            const user = userCredential.user;
+        })
     }catch(error){
         console.error(error);
         alert(error.message);
@@ -36,7 +41,7 @@ const signInEmail = async(email,password) => {
 };
 
 const logout = () => {
-    auth.signOut();
+    signOut(auth);
 };
 
 //registrera användare 

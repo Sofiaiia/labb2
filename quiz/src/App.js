@@ -6,11 +6,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
  
-  //om man inte e inloggad ska man skickas till login 
-
-  /* 
-    
-  */
   return (
     <div className="App">
       <img src={quizLogo} alt="logo" height="200"/>
