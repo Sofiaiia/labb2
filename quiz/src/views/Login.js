@@ -11,10 +11,6 @@ function Login(){
     const history = useHistory();
 
     useEffect(()=>{
-        if(loading){
-            //ifall man vill ha en loading vy 
-            return;
-        }
         if(user) history.replace("/start");
     },[user,loading]);
 
@@ -23,11 +19,15 @@ function Login(){
             <form onSubmit={() => signInEmail(email,password)}>
                 <label> Email: </label>
                 <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <br/>
                 <label> Password: </label>
                 <input  type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
+                <br/>
                 <button type="submit"> Login </button> 
             </form>
             <button onClick={signInGoogle}>Login with Google </button>
+            <br/>
+            <button> New user? Register here! </button>
         </div>
     );
 }

@@ -41,6 +41,8 @@ function Start(){
                         <button className="choise" onClick={() => setRules(true)}> RULES </button>
                         <br/>
                         <button className="choise" onClick={() => setToplist(true)}> TOPLIST </button>
+                        <br/>
+                        <button className="logout" onClick={() => logout()}> LOG OUT </button>
                     </div>
                     )))
             }
