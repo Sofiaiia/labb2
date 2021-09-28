@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i'); 
+
+.sign-in-container{
+    background-color: white;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-family: 'Poppins',sans-serif;
+    border-radius: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-bottom: 20%;
+}
+.login-button{
+    font-size: 20px;
+    font-family: 'Poppins',sans-serif;
+    margin-bottom: 30px;
+}
+.google-button{
+
+}
+.input-field{
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding-left: 30px;
+}
+.sign-in-header{
+    font-size: 30px;
+}
+.input-box{
+    position:'relative';
+    display:'inline-block';
+}
+.placeholder-icon{
+    position:'absolute';
+}
