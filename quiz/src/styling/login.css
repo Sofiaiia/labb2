@@ -17,6 +17,7 @@
     font-size: 20px;
     font-family: 'Poppins',sans-serif;
     margin-bottom: 30px;
+    padding: 5px 25px 5px 25px;
 }
 .google-button{
 
@@ -25,6 +26,8 @@
     font-size: 20px;
     margin-bottom: 10px;
     padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .sign-in-header{
     font-size: 30px;

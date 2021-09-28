@@ -25,12 +25,12 @@ function Login(){
                 <form onSubmit={() => signInEmail(email,password)}>
                     <h2 className="sign-in-header"> SIGN IN: </h2>
                     <div className="input-box">
-                        <EmailIcon style={{ position:'absolute',paddingLeft:'5px'}}/>
+                        <EmailIcon style={{ position:'absolute',paddingLeft:'5px', paddingTop:'10px', paddingBottom:'10px'}}/>
                         <input placeholder={"E-mail"} className="input-field" type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
                     <br/>
                     <div className="input-box">
-                        <LockIcon style={{ position:'absolute',paddingLeft:'5px'}}/>
+                        <LockIcon style={{ position:'absolute',paddingLeft:'5px',paddingTop:'10px', paddingBottom:'10px'}}/>
                         <input placeholder="Password" className="input-field" type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     <br/>
