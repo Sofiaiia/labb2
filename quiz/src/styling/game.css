@@ -103,3 +103,11 @@
     place-content: center;
     column-gap: 80px;
 }
+.wrapper{
+    display: grid;
+    grid-template-columns: 30% 30%;
+    grid-template-rows: 50% 50%;
+    column-gap: 30px;
+    justify-content: center;
+    align-items: center;
+}

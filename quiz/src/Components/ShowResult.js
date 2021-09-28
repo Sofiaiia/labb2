@@ -14,6 +14,7 @@ import useSound from 'use-sound';
 
     useEffect(()=>{
         props.handleStop();
+        //pusha resultat till firebase 
     },[]);
     
     return(
