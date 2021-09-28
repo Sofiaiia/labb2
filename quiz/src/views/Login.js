@@ -2,6 +2,7 @@ import {auth,signInGoogle,signInEmail,} from '../Firebase/Firebase.js';
 import {useAuthState} from 'react-firebase-hooks/auth'; 
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
+import '../styling/login.css';
 
 function Login(){
 
@@ -16,18 +17,20 @@ function Login(){
 
     return(
         <div>
-            <form onSubmit={() => signInEmail(email,password)}>
-                <label> Email: </label>
-                <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <div className="sign-up-container">
+                <form onSubmit={() => signInEmail(email,password)}>
+                    <label> Email: </label>
+                    <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <br/>
+                    <label> Password: </label>
+                    <input  type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <br/>
+                    <button type="submit"> Login </button> 
+                </form>
+                <button onClick={signInGoogle}>Login with Google </button>
                 <br/>
-                <label> Password: </label>
-                <input  type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
-                <br/>
-                <button type="submit"> Login </button> 
-            </form>
-            <button onClick={signInGoogle}>Login with Google </button>
-            <br/>
-            <button> New user? Register here! </button>
+                <button> New user? Register here! </button>
+            </div>
         </div>
     );
 }

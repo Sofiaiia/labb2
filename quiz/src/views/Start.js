@@ -18,7 +18,6 @@ function Start(){
     
     useEffect(()=>{
 
-        if(loading) return;
         if(!user) return history.replace("/"); 
 
         setGame(false);
