@@ -21,6 +21,7 @@ const signInGoogle = async() => {
     
     try{
         const result = await signInWithPopup(auth,googleProvider);
+        const user = result.user;
     } catch(error){
         console.error(error);
         alert(error.message);

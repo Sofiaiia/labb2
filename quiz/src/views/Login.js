@@ -14,13 +14,15 @@ function Login(){
     const history = useHistory();
 
     useEffect(()=>{
+        if(loading) return; 
         if(user) history.replace("/start");
     },[user,loading]);
 
+    
     return(
         <div>
             <div className="sign-in-container">
-                <form onSubmit={() => signInEmail(email,password)}>
+                <div>
                     <h2 className="sign-in-header"> SIGN IN: </h2>
                     <div className="input-box">
                         <EmailIcon style={{ position:'absolute',paddingLeft:'5px', paddingTop:'10px', paddingBottom:'10px'}}/>
@@ -32,14 +34,16 @@ function Login(){
                         <input placeholder="Password" className="input-field" type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     <br/>
-                    <button type="submit" className="login-button"> Login </button> 
+                    <button onClick={() => signInEmail(email,password)} className="login-button"> Login </button> 
                     <br/>
-                    <button onClick={signInGoogle} className="google-button">
-                        <div class="icons8-google"></div>
-                        Login with Google </button>
-                    <br/>
-                    <button> New user? Register here! </button>
-                </form>
+                </div>
+                <button onClick={signInGoogle} className="google-button">
+                        <div className="icons8-google"></div>
+                        Login with Google 
+                </button>
+                <br/>
+                <button> New user? Register here! </button>
+
             </div>
         </div>
     );
