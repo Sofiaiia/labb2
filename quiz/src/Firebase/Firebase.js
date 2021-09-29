@@ -44,7 +44,7 @@ const logout = () => {
     signOut(auth);
 };
 
-const registerUser = (auth,email,password) => {
+const registerUser = (email,password) => {
     createUserWithEmailAndPassword(auth,email,password)
     .then(
         (userCredential)=>{
