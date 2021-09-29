@@ -42,7 +42,7 @@ function Login(){
                         Login with Google 
                 </button>
                 <br/>
-                <button> New user? Register here! </button>
+                <button className="register-button"> New user? Register here! </button>
 
             </div>
         </div>

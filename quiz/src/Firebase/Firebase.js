@@ -1,6 +1,6 @@
 import {initializeApp} from "firebase/app";
 import {getFirestore} from 'firebase/firestore/lite';
-import {GoogleAuthProvider,signInWithPopup,getAuth,signInWithEmailAndPassword,signOut} from 'firebase/auth';
+import {GoogleAuthProvider,signInWithPopup,getAuth,signInWithEmailAndPassword,signOut,createUserWithEmailAndPassword} from 'firebase/auth';
 
 const firebaseConfig = {
     apiKey: "AIzaSyAo4EfQNMBxysu2fNp7-wDCDFeoGfgVyjk",
@@ -44,6 +44,16 @@ const logout = () => {
     signOut(auth);
 };
 
-//registrera användare 
+const registerUser = (auth,email,password) => {
+    createUserWithEmailAndPassword(auth,email,password)
+    .then(
+        (userCredential)=>{
+            const user = userCredential.user;
+        })
+    .catch((error) => {
+        console.error(error);
+        alert(error.message);
+    })
+}
 
-export {auth,db,signInGoogle,signInEmail,logout};
+export {auth,db,signInGoogle,signInEmail,logout,registerUser};
