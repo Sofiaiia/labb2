@@ -74,7 +74,8 @@ const pushResult = async(selectName, selectTotalPoints, selectNumOfQuestions, se
 }
 
 const getResult = async() => {
-
+    //sortera efter poäng 
+    //limit till top 10 
 }
 
 export {auth,db,signInGoogle,signInEmail,logout,registerUser,pushResult,getResult,};

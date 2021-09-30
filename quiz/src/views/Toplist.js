@@ -1,12 +1,15 @@
 import React from 'react';
 import { useHistory } from 'react-router';
-import {logout,} from '../Firebase/Firebase.js';
+import {logout,getResult} from '../Firebase/Firebase.js';
 
 
 function Toplist(){
 
     const history = useHistory();
 
+    //anropa getResult 
+
+    //sätt en en datagrid från material-UI
     return(
         <div>
             <button onClick={() => history.replace("/start")}  className="button-back"> BACK </button>

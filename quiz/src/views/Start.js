@@ -18,7 +18,7 @@ function Start(){
 
     return(
         <div>
-             <div>
+             <div className="start-box">
                 <button className="choise" onClick={() => history.replace("/game")}> PLAY GAME </button>
                 <br/>
                 <button className="choise" onClick={() => history.replace("/rules")}> RULES </button>

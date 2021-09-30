@@ -18,8 +18,11 @@
 .login-button{
     font-size: 20px;
     font-family: 'Poppins',sans-serif;
-    margin-bottom: 30px;
     padding: 5px 25px 5px 25px;
+    color:#C1343E;
+    background-color: white;
+    border: #C1343E 3px solid;
+    border-radius: 5px;
 }
 .google-button{
     display: flex;
@@ -28,6 +31,11 @@
     padding: 10px 15px 10px 15px;
     font-size: 17px;
     font-family: 'Poppins',sans-serif;
+    color:#4285F4;
+    background-color: white;
+    border: #4285F4 3px solid;
+    border-radius: 5px;
+    margin-top: 20px;
 }
 .input-field{
     font-size: 20px;
@@ -58,4 +66,38 @@
     padding: 10px 8px 10px 8px;
     font-size: 17px;
     font-family: 'Poppins',sans-serif;
+    color:#C1343E;
+    background-color: white;
+    border: #C1343E 3px solid;
+    border-radius: 5px;
+    
+ }
+ .login-button:hover{
+    color:white;
+    background-color: #C1343E;
+    border: #C1343E 3px solid;
+ }
+ .register-button:hover{
+    color:white;
+    background-color: #C1343E;
+    border: #C1343E 3px solid;
+ }
+ .google-button:hover{
+    color:white;
+    background-color: #4285F4;
+    border: #4285F4 3px solid;
+ }
+ .register-button2{
+    padding: 10px 8px 10px 8px;
+    font-size: 17px;
+    font-family: 'Poppins',sans-serif;
+    color:#C1343E;
+    background-color: white;
+    border: #C1343E 3px solid;
+    border-radius: 5px;
+ }
+ .register-button2:hover{
+    color:white;
+    background-color: #C1343E;
+    border: #cfcaca 3px solid;
  }
