@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import Game from './Game';
-import Rules from './Rules';
-import Toplist from './Toplist';
+import React, { useEffect,} from 'react';
 import '../styling/start.css';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import {auth,logout,} from '../Firebase/Firebase.js';
@@ -28,7 +25,7 @@ function Start(){
                 <br/>
                 <button className="choise" onClick={() => history.replace("/toplist")}> TOPLIST </button>
                 <br/>
-                <button className="logout" onClick={() => logout()}> LOG OUT </button>
+                <button className="choise" onClick={() => logout()}> LOG OUT </button>
              </div>
         </div>
     );

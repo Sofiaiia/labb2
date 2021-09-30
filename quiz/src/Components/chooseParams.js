@@ -3,12 +3,15 @@ import axios from "axios";
 import '../styling/params.css';
 import {useDispatch} from 'react-redux';
 import {numOfQuestions,setName,} from '../store/resultSlice';
+import { useHistory } from 'react-router';
+import {logout,} from '../Firebase/Firebase.js';
 
 function ChooseParams(props){
 
     const [categories, setCategories] = useState([]);
     const [choises,setChoises] = useState({number: 10, difficulty:"easy", category:"", name:""});
     const dispatch = useDispatch();
+    const history = useHistory();
 
     useEffect(()=>{
         axios.get("http://localhost:8080/categories")
@@ -34,6 +37,8 @@ function ChooseParams(props){
 
     return(
         <div>
+            <button onClick={() => history.replace("/start")} className="button-back"> Back </button>
+            <button className="button-back" onClick={() => logout()}> Log out  </button>
             <h2 className="header"> Make your choises for the game: </h2>
             <form onSubmit={submit}>
                 <label className="name"> Number of questions: </label>

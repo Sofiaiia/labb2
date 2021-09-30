@@ -3,7 +3,7 @@ import {useSelector} from 'react-redux';
 import { selectPoints,selectName,selectQuestions,selectTime} from '../store/resultSlice';
 import '../styling/result.css';
 import price from '../pictures/price.png';
-import useSound from 'use-sound';
+import { useHistory } from 'react-router';
 
  function ShowResult(props){
 
@@ -11,6 +11,7 @@ import useSound from 'use-sound';
     const name = useSelector(selectName);
     const numOfQuestions = useSelector(selectQuestions);
     const time = useSelector(selectTime);
+    const history = useHistory();
 
     useEffect(()=>{
         props.handleStop();
@@ -19,6 +20,8 @@ import useSound from 'use-sound';
     
     return(
         <div className="wrap">
+            <button onClick={() => history.replace("/start")} className="button-back"> Return to homepage </button>
+            <br/>
             <img src={price} alt="price" height="200"/>
             <h2 className="resultHeader"> QUIZ COMPLETED </h2>
             <div className="boxResult">

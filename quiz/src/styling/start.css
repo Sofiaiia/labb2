@@ -5,8 +5,8 @@
     font-size: 30px;
     margin-top: 10px;
     width: 50%;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     transition: 1s;
     box-shadow: 6px 6px 0 black;
     transform: skewX(-15deg);

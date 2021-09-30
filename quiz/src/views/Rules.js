@@ -1,9 +1,16 @@
 import React from 'react';
 import '../styling/rules.css';
+import { useHistory } from 'react-router';
+import {logout,} from '../Firebase/Firebase.js';
 
 function Rules(){
+    const history = useHistory();
+
+
     return(
         <div className="box">
+             <button onClick={() => history.replace("/start")} className="button-back"> Back </button>
+             <button className="button-back" onClick={() => logout()}> Log out  </button>
             <h2 className="headingRules"> Rules: </h2>
             <p className="numberPink">  Choose the number of questions </p> 
             <p className="numberPurple"> Choose your difficulty </p>
