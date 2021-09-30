@@ -4,6 +4,9 @@ import { selectPoints,selectName,selectQuestions,selectTime} from '../store/resu
 import '../styling/result.css';
 import price from '../pictures/price.png';
 import { useHistory } from 'react-router';
+import {pushResult} from '../Firebase/Firebase.js'
+
+
 
  function ShowResult(props){
 
@@ -15,7 +18,8 @@ import { useHistory } from 'react-router';
 
     useEffect(()=>{
         props.handleStop();
-        //pusha resultat till firebase 
+        //anropa funktion för att pusha resultat 
+        pushResult(name,totalPoints,numOfQuestions,time); 
     },[]);
     
     return(

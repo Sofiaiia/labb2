@@ -1,6 +1,9 @@
 import {initializeApp} from "firebase/app";
 import {getFirestore} from 'firebase/firestore/lite';
 import {GoogleAuthProvider,signInWithPopup,getAuth,signInWithEmailAndPassword,signOut,createUserWithEmailAndPassword} from 'firebase/auth';
+import { collection, addDoc } from "firebase/firestore"; 
+import {useSelector} from 'react-redux';
+import { selectPoints,selectName,selectQuestions,selectTime, numOfQuestions} from '../store/resultSlice';
 
 const firebaseConfig = {
     apiKey: "AIzaSyAo4EfQNMBxysu2fNp7-wDCDFeoGfgVyjk",
@@ -16,6 +19,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db= getFirestore(app);
 const googleProvider = new GoogleAuthProvider();
+
 
 const signInGoogle = async() => {
     
@@ -56,4 +60,23 @@ const registerUser = (email,password) => {
     })
 }
 
-export {auth,db,signInGoogle,signInEmail,logout,registerUser};
+//använder cloud firestore 
+const pushResult = async(selectName, selectTotalPoints, selectNumOfQuestions, selectTime) => {
+    try{
+    const docRef = await addDoc(collection("results"),{
+       name: selectName,
+       totalPoints: selectTotalPoints,
+       numOfQuestions: selectNumOfQuestions,
+       time: selectTime
+    });
+    console.log("Document written with ID: ", docRef.id);
+    } catch (error){
+        console.error("error adding document: ",error);
+    }
+}
+
+const getResult = async() => {
+
+}
+
+export {auth,db,signInGoogle,signInEmail,logout,registerUser,pushResult};
