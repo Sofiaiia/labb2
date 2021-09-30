@@ -13,6 +13,7 @@
     margin-left: 35%;
     margin-right: 35%;
     margin-bottom: 20%;
+    box-shadow: #C1343E 0px 10px 25px, #C1343E 0px -12px 30px, #C1343E 0px 4px 6px, #C1343E 0px 12px 13px, #C1343E 0px -3px 5px;
 }
 .login-button{
     font-size: 20px;
