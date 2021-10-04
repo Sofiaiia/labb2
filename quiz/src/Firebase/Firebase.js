@@ -73,7 +73,7 @@ const pushResult = async(selectName, selectTotalPoints, selectNumOfQuestions, se
 
 const getResult = async() => {
     const resultArray = [];
-    const q = query(collection(db,"results"), orderBy("totalPoints"), limit(10));
+    const q = query(collection(db,"results"), orderBy("totalPoints", "desc"), limit(10));
     const result = await getDocs(q);
     console.log(result);
     result.forEach((doc) => {

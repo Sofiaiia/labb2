@@ -1,4 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i'); 
+
 .grid-container{
    margin-left: 10%;
    margin-right: 10%;
+   margin-bottom: 20%;
+}
+
+.grid-header{
+    color: white;
+    font-size: 20px;
+    font-family: 'Poppins',sans-serif;
+}
+
+.grid-Cell{
+    color: white;
+    font-size: 15px;
+    font-family: 'Poppins',sans-serif;
+}
+
+.top-header{
+    color: white;
+    font-size: 40px;
+    font-family: 'Poppins',sans-serif;
 }
