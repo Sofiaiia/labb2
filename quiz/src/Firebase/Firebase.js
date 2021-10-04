@@ -77,7 +77,7 @@ const getResult = async() => {
     const result = await getDocs(q);
     console.log(result);
     result.forEach((doc) => {
-        resultArray.push({name: doc.data().name, totalPoints: doc.data().totalPoints, numOfQuestions: doc.data().numOfQuestions,time: doc.data().time}); 
+        resultArray.push({id:doc.id,name: doc.data().name, totalPoints: doc.data().totalPoints, numOfQuestions: doc.data().numOfQuestions,time: doc.data().time}); 
     });
 
     return resultArray;
