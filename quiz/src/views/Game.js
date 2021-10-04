@@ -8,6 +8,7 @@ import ChooseParams from '../Components/ChooseParams';
 import ShowResult from '../Components/ShowResult';
  import {useDispatch} from 'react-redux';
  import {setTime,} from '../store/resultSlice';
+ import {selectTime} from '../store/resultSlice';
 
 function Game(){
 
@@ -39,6 +40,8 @@ function Game(){
         setIsStoped(false);
         //sätt in tiden i storen
         dispatch(setTime(formatTime()));
+
+        return formatTime();
     }
 
     const formatTime = () => {

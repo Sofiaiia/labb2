@@ -16,10 +16,11 @@ import {pushResult} from '../Firebase/Firebase.js'
     const time = useSelector(selectTime);
     const history = useHistory();
 
-    useEffect(()=>{
-        props.handleStop();
-        //anropa funktion för att pusha resultat 
-        pushResult(name,totalPoints,numOfQuestions,time); 
+    useEffect(()=>{ 
+        const endTime = props.handleStop();
+        //tiden går inte in.....
+        console.log(endTime);
+        pushResult(name,totalPoints,numOfQuestions,endTime);
     },[]);
     
     return(

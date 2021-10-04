@@ -4,8 +4,7 @@ const initialState = {
     name: "default",
     points: 0,
     questions: 0,
-    time: 0,
-    //nån sorts koll på när resutatet är klart att hämta för listan
+    time: "none",
 };
 
 export const resultSlice = createSlice({
