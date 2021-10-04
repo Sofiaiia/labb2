@@ -1,8 +1,7 @@
 import {initializeApp} from "firebase/app";
 import {getFirestore} from 'firebase/firestore';
 import {GoogleAuthProvider,signInWithPopup,getAuth,signInWithEmailAndPassword,signOut,createUserWithEmailAndPassword} from 'firebase/auth';
-import { collection, addDoc } from "firebase/firestore";
-
+import { collection, addDoc,query,orderBy,limit,getDocs } from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAo4EfQNMBxysu2fNp7-wDCDFeoGfgVyjk",
@@ -18,7 +17,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db= getFirestore();
 const googleProvider = new GoogleAuthProvider();
-
 
 const signInGoogle = async() => {
     
@@ -74,8 +72,15 @@ const pushResult = async(selectName, selectTotalPoints, selectNumOfQuestions, se
 }
 
 const getResult = async() => {
-    //sortera efter poäng 
-    //limit till top 10 
+    const resultArray = [];
+    const q = query(collection(db,"results"), orderBy("totalPoints"), limit(10));
+    const result = await getDocs(q);
+    console.log(result);
+    result.forEach((doc) => {
+        resultArray.push({name: doc.data().name, totalPoints: doc.data().totalPoints, numOfQuestions: doc.data().numOfQuestions,time: doc.data().time}); 
+    });
+
+    return resultArray;
 }
 
 export {auth,db,signInGoogle,signInEmail,logout,registerUser,pushResult,getResult,};
