@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
 import {logout,getResult,} from '../Firebase/Firebase.js';
-import { DataGrid, useGridApiRef,} from  '@material-ui/data-grid';
+import { DataGrid,} from  '@material-ui/data-grid';
+import '../styling/toplist.css';
 
 
 function Toplist(){
@@ -36,6 +37,7 @@ function Toplist(){
                     {field:"time", headerName:"Time", width:150}
                     ]}
                     autoHeight 
+                    hideFooterPagination
                     />)
                 
                 }
