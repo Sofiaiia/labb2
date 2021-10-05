@@ -3,27 +3,61 @@
 .grid-container{
    margin-left: 10%;
    margin-right: 10%;
-   margin-bottom: 20%;
+   margin-bottom: 10%;
 }
 
-.grid-header{
+.grid-header-name{
     color: white;
     font-size: 20px;
     font-family: 'Poppins',sans-serif;
+    background-color: #E62EA6;
+}
+.grid-header-points{
+    color: white;
+    font-size: 20px;
+    font-family: 'Poppins',sans-serif;
+    background-color: #6E1299;
+}
+.grid-header-questions{
+    color: white;
+    font-size: 20px;
+    font-family: 'Poppins',sans-serif;
+    background-color: #E6D800;
+}
+.grid-header-time{
+    color: white;
+    font-size: 20px;
+    font-family: 'Poppins',sans-serif;
+    background-color: #01630E;
 }
 
-.grid-Cell{
+.grid-Cell-name{
     color: white;
     font-size: 15px;
     font-family: 'Poppins',sans-serif;
+    background-color: rgba(230,46,166,0.6);
+}
+.grid-Cell-points{
+    color: white;
+    font-size: 15px;
+    font-family: 'Poppins',sans-serif;
+    background-color: rgba(110,18,153,0.6);
+}
+.grid-Cell-questions{
+    color: white;
+    font-size: 15px;
+    font-family: 'Poppins',sans-serif;
+    background-color: rgba(230,216,0,0.6);
+}
+.grid-Cell-time{
+    color: white;
+    font-size: 15px;
+    font-family: 'Poppins',sans-serif;
+    background-color: rgba(1,99,14,0.6);
 }
 
 .top-header{
     color: white;
     font-size: 40px;
     font-family: 'Poppins',sans-serif;
-}
-
-.row-color-pink{
-   
 }

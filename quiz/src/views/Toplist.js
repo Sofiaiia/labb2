@@ -27,18 +27,16 @@ function Toplist(){
             <br/>
             <div className="grid-container">
             <h2 className="top-header"> Top 10: </h2>
-            
                     <DataGrid rows={resultObjects} columns={[
-                    {field:"name", headerName:"Name", width:250,headerAlign:"center", align:"center",headerClassName:"grid-header", cellClassName:"grid-Cell"},
-                    {field:"totalPoints", headerName:"Points", width:150,headerAlign:"center", align:"center",headerClassName:"grid-header",cellClassName:"grid-Cell"},
-                    {field:"numOfQuestions", headerName:"Number of Questions", width:350,headerAlign:"center", align:"center",headerClassName:"grid-header",cellClassName:"grid-Cell"},
-                    {field:"time", headerName:"Time", width:150,headerAlign:"center", align:"center",headerClassName:"grid-header",cellClassName:"grid-Cell"}
+                    {field:"name", headerName:"Name", flex:0.7,headerAlign:"center", align:"center",headerClassName:"grid-header-name", cellClassName:"grid-Cell-name"},
+                    {field:"totalPoints", headerName:"Points", width:150,headerAlign:"center", align:"center",headerClassName:"grid-header-points",cellClassName:"grid-Cell-points"},
+                    {field:"numOfQuestions", headerName:"Number of Questions", width:350,headerAlign:"center", align:"center",headerClassName:"grid-header-questions",cellClassName:"grid-Cell-questions"},
+                    {field:"time", headerName:"Time", width:150,headerAlign:"center", align:"center",headerClassName:"grid-header-time",cellClassName:"grid-Cell-time"}
                     ]}
                     autoHeight 
                     hideFooter
                     loading={loading}
-                    
-                    />)
+                    />
                 
             
             </div>

@@ -7,8 +7,7 @@ import QuestionsComp from '../Components/QuestionsComp';
 import ChooseParams from '../Components/ChooseParams';
 import ShowResult from '../Components/ShowResult';
  import {useDispatch} from 'react-redux';
- import {setTime,} from '../store/resultSlice';
- import {selectTime} from '../store/resultSlice';
+ import {setTime,setPoints} from '../store/resultSlice';
 
 function Game(){
 
@@ -59,6 +58,7 @@ function Game(){
                  setQuestions(response.data.results);
                  console.log(response.data.results);
                 });
+        dispatch(setPoints(0));
     },[params]);
 
     return(

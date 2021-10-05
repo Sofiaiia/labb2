@@ -27,11 +27,15 @@ export const resultSlice = createSlice({
         setTime: (state,action) => {
             state.time = action.payload;
         },
+        //nollställ poäng 
+        setPoints: (state,action) => {
+            state.points = action.payload;
+        },
     },
 });
 
 //här sätts namnet på reducerna in, som defineras ovan 
-export const {incrementPoint,numOfQuestions,setName,setTime} = resultSlice.actions;
+export const {incrementPoint,numOfQuestions,setName,setTime,setPoints} = resultSlice.actions;
 
 //selectors för alla delar av statet
 export const selectName = (state) => state.results.name;
