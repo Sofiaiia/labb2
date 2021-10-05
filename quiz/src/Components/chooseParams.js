@@ -43,19 +43,17 @@ function ChooseParams(props){
             <form onSubmit={submit}>
                 <label className="name"> Number of questions: </label>
                 <select value={choises.number} onChange={handleChange} className="dropDown" name="number"> 
-                   <option selected value="10"> 10 </option> 
+                   <option value="10"> 10 </option> 
                    <option value="15"> 15 </option>
                    <option value="20"> 20 </option>
                    <option value="25"> 25 </option>
                    <option value="30"> 30 </option>
                    <option value="35"> 35 </option>
-                   <option value="40"> 40 </option>
-                   <option value="45"> 45 </option>
                 </select>
                 <br/>
                 <label className="name"> Difficulty level: </label>
-                <select value="" onChange={handleChange} className="dropDown" name="difficulty">
-                    <option selected value="easy">Easy</option>
+                <select value={choises.difficulty} onChange={handleChange} className="dropDown" name="difficulty">
+                    <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
                     <option value="hard">Hard</option>
                 </select>

@@ -25,7 +25,6 @@ function Game(){
     const dispatch = useDispatch();
 
     const handleStart = () => {
-        //Starta klockan 
         setIsActive(true);
         setIsStoped(true);
         countRef.current = setInterval(() => {
@@ -33,11 +32,9 @@ function Game(){
         },1000);
     }
 
-    const handleStop = () => {
-        //stanna klockan 
+    const handleStop = () => { 
         clearInterval(countRef.current);
         setIsStoped(false);
-        //sätt in tiden i storen
         dispatch(setTime(formatTime()));
 
         return formatTime();

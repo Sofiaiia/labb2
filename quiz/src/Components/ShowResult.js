@@ -18,7 +18,6 @@ import {pushResult} from '../Firebase/Firebase.js'
 
     useEffect(()=>{ 
         const endTime = props.handleStop();
-        //tiden går inte in.....
         console.log(endTime);
         pushResult(name,totalPoints,numOfQuestions,endTime);
     },[]);
@@ -26,6 +25,7 @@ import {pushResult} from '../Firebase/Firebase.js'
     return(
         <div className="wrap">
             <button onClick={() => history.replace("/start")} className="button-back"> Return to homepage </button>
+            <button onClick={() => history.replace("/toplist")} className="button-back"> See toplist </button>
             <br/>
             <img src={price} alt="price" height="200"/>
             <h2 className="resultHeader"> QUIZ COMPLETED </h2>
