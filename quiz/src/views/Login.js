@@ -31,7 +31,7 @@ function Login(){
                     <br/>
                     <div className="input-box">
                         <LockIcon style={{ position:'absolute',paddingLeft:'5px',paddingTop:'10px', paddingBottom:'10px'}}/>
-                        <input placeholder="Password" className="input-field" type="text" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <input placeholder="Password" className="input-field" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     <br/>
                     <button onClick={() => signInEmail(email,password)} className="login-button"> Login </button> 
