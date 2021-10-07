@@ -24,7 +24,6 @@ function QuestionsComp(props){
 
     const checkAnswer = (answer,correct) =>{
         setRandom((Math.floor(Math.random()* 3)));
-        console.log(random);
         props.setCurrent(props.currentQuestion +1);
         if(answer === correct){
             setShow(true);

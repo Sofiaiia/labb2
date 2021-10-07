@@ -18,7 +18,6 @@ import {pushResult} from '../Firebase/Firebase.js'
 
     useEffect(()=>{ 
         const endTime = props.handleStop();
-        console.log(endTime);
         pushResult(name,totalPoints,numOfQuestions,endTime);
     },[]);
     
