@@ -58,6 +58,7 @@ function ChooseParams(props){
                 </select>
                 <br/>
                 <label className="name"> Select your category: </label>
+                <br/>
                 <select className="dropDown" onChange={handleChange} name="category"> 
                     {categories.map((cat) =>{
                         return(

@@ -70,7 +70,7 @@ h3{
     font-size: 20px;
     font-family: 'Poppins',sans-serif;
 }
-@media screen and (min-width:1300px){
+@media screen and (max-width:1300px){
     .numberPink{
         margin-left: 27%;
     }
@@ -93,5 +93,31 @@ h3{
     .numberYellow2{
         margin-left: 47%;
         margin-top: -3%;
+    }
+}
+@media screen and (max-width:600px){
+    .numberPink{
+        width: 30%;
+        margin-left: 20%;
+    }
+    .numberPurple{
+        width: 30%;
+        margin-left: 40%;
+    }
+    .numberYellow{
+        width: 30%;
+        margin-left: 20%;
+    }
+    .numberPink2{
+        width: 30%;
+        margin-left: 40%;
+    }
+    .numberPurple2{
+        width: 30%;
+        margin-left: 20%;
+    }
+    .numberYellow2{
+        width: 30%;
+        margin-left: 40%;
     }
 }
