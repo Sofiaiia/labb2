@@ -12,7 +12,7 @@ function App() {
  
   return (
     <div className="App">
-      <img src={quizLogo} alt="logo" height="200"/>
+      <img src={quizLogo} alt="logo" height="200" className="logoPic"/>
       <BrowserRouter> 
         <Switch>
             <Route exact path="/" component={Login}/>

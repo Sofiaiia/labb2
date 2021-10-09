@@ -101,3 +101,28 @@
     background-color: #C1343E;
     border: #cfcaca 3px solid;
  }
+
+ @media screen and (max-width:800px){
+    .sign-in-container{
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+ }
+
+ @media screen and (max-width:600px){
+    .input-field{
+        width: 70%;
+    }
+    .register-button{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .google-button{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .register-button2{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+ }
