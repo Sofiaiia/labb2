@@ -66,3 +66,20 @@
     color:white;
     background-color: #C1343E;
  }
+
+ @media screen and (max-width:800px){
+  .boxResult{
+    padding-right: 15px;
+    padding-right: 15px;
+  }
+}
+
+ @media screen and (max-width:600px){
+  .text{
+      font-size: 15px;
+    }
+    .boxResult{
+      padding-right: 15px;
+      padding-right: 15px;
+    }
+ }

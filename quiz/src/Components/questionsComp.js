@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../styling/game.css';
 import {useSelector, useDispatch} from 'react-redux';
 import { selectPoints,incrementPoint,} from '../store/resultSlice';
@@ -35,6 +35,12 @@ function QuestionsComp(props){
             playWrong();
         } 
     }
+    useEffect(()=>{
+        focus();
+    },[]);
+    const focus = () => {
+        document.getElementById("focusBox").focus();
+    }
 
     return(
         <div>
@@ -62,7 +68,7 @@ function QuestionsComp(props){
                             <strong> WRONG ANSWER  </strong>
                         </Alert>
                      </Collapse> 
-                    <p className="questionBox">{fraga.question}</p> 
+                    <p className="questionBox" id="focusBox">{fraga.question}</p> 
                     <div className="">
                     {fraga.incorrect_answers.map((answer,index) => {
                             return(

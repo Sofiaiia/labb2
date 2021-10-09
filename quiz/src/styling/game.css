@@ -111,3 +111,34 @@
     justify-content: center;
     align-items: center;
 }
+
+@media screen and (max-width:600px){
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .header1{
+        font-size: 17px;
+    }
+    .header2{
+        font-size: 17px;
+    }
+    .header3{
+        font-size: 17px;
+    }
+    .content1{
+        font-size: 12px;
+    }
+    .content2{
+        font-size: 12px;
+    }
+    .content3{
+        font-size: 12px;
+    }
+    .questionBox{
+        font-size: 15px;
+    }
+    .answerButton{
+        font-size: 15px;
+    }
+}
