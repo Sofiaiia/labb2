@@ -61,3 +61,17 @@
     font-size: 50px;
     font-family: 'Poppins',sans-serif;
 }
+@media screen and (max-width:800px){
+    .grid-header-name{
+        font-size: 15px;
+    }
+    .grid-header-points{
+        font-size: 15px;
+    }
+    .grid-header-questions{
+        font-size: 15px;
+    }
+    .grid-header-time{
+        font-size: 15px;
+    }
+}
