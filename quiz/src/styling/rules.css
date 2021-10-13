@@ -121,3 +121,28 @@ h3{
         margin-left: 40%;
     }
 }
+@media screen and (min-width:1300px){
+    .numberPink{
+        margin-left: 27%;
+    }
+    .numberPurple{
+        margin-left: 47%;
+        margin-top: -3%;
+    }
+    .numberYellow{
+        margin-left: 27%;
+        margin-top: -3%;
+    }
+    .numberPink2{
+        margin-left: 47%;
+        margin-top: -3%;
+    }
+    .numberPurple2{
+        margin-left: 27%;
+        margin-top: -3%;
+    }
+    .numberYellow2{
+        margin-left: 47%;
+        margin-top: -3%;
+    }
+} 
