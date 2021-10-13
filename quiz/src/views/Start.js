@@ -6,7 +6,7 @@ import { useHistory } from 'react-router';
 
 function Start(){
 
-    const [user,loading,error] = useAuthState(auth);
+    const [user,loading] = useAuthState(auth);
     const history = useHistory();   
     
     useEffect(()=>{
